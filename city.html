@@ -9,9 +9,9 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="./dist/style.css" />
-        <title>Terof media | Webmasters</title>
+        <title>Terof media | Contact Us</title>
     </head>
-    <body>
+    <body bg="#F8F8F8">
         <header>
             <div
                 class="container flex justify-between items-center flex-wrap py-4"
@@ -37,7 +37,9 @@
                             <a class="nav-link" href="/">Home</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="/city.html">City</a>
+                            <a class="nav-link active" href="/city.html"
+                                >City</a
+                            >
                         </li>
                         <li>
                             <a class="nav-link" href="/articles.html"
@@ -50,7 +52,7 @@
                             >
                         </li>
                         <li class="dropdown">
-                            <button class="dropdown-button active">
+                            <button class="dropdown-button">
                                 <span>All Pages</span>
                                 <img
                                     src="/public/icons/arrow-down.svg"
@@ -135,84 +137,85 @@
         </header>
 
         <main class="grid xl:grid-cols-[auto,20rem] py-10 container gap-8">
-            <section class="flex flex-col gap-4 px-4">
+            <section class="flex flex-col gap-4 py-8 px-4">
                 <div class="flex items-center gap-4">
-                    <a class="text-gray lg:text-lg xl:text-xl">Articles</a>
+                    <a href="/" class="text-gray lg:text-lg xl:text-xl"
+                        >All Pages</a
+                    >
                     <i
                         class="isax icon-arrow-right-3 text-gray lg:text-lg xl:text-xl mt-2"
                     ></i>
                     <a
-                        href="/webmaster.html"
+                        href="/contact-us.html"
                         class="text-black lg:text-lg xl:text-xl font-bold"
-                        >Webmasters</a
                     >
+                        Contact Us
+                    </a>
                 </div>
 
-                <article class="mt-10 flex flex-col gap-10">
-                    <div class="flex flex-col gap-4 lg:gap-6 mt-4">
-                        <h1
-                            class="text-black text-xl lg:text-2xl 2xl:text-[1.75rem] 2xl:leading-[2.5rem] max-w-[100ch]"
-                        >
-                            Embedded localized timetables
-                        </h1>
-                        <p
-                            class="text-gray text-base leading-6 lg:text-lg lg:leading-8 2xl:text-2xl 2xl:leading-10"
-                        >
-                            Help your visitors by embedding a localized
-                            timetable on your own website. These pages detect
-                            the timezone your visitor is in and show all times
-                            in your visitors timezone. Follow the example below
-                            to embed a localized timetable on your website.
-                        </p>
-                    </div>
-                    <div class="flex flex-col gap-4 lg:gap-6 mt-4">
-                        <h1
-                            class="text-black text-xl lg:text-2xl 2xl:text-[1.75rem] 2xl:leading-[2.5rem] max-w-[100ch]"
-                        >
-                            How to embed a timetable into your website
-                        </h1>
-                        <ul>
-                            <li
-                                class="text-gray text-base leading-6 lg:text-lg lg:leading-8 2xl:text-2xl 2xl:leading-10"
-                            >
-                                <span class="list-step font-bold">Step 1:</span>
-                                Choose a timetable that you want to embed from
-                                the list below
-                            </li>
-                            <li
-                                class="text-gray text-base leading-6 lg:text-lg lg:leading-8 2xl:text-2xl 2xl:leading-10"
-                            >
-                                <span class="list-step font-bold">Step 2:</span>
-                                Copy the embed snippet into your website html,
-                                somewhere between the and tags.
-                            </li>
-                            <li
-                                class="text-gray text-base leading-6 lg:text-lg lg:leading-8 2xl:text-2xl 2xl:leading-10"
-                            >
-                                <span class="list-step font-bold">Step 3:</span>
-                                Save your file and refresh your page, you should
-                                see the timetable now. You can adjust the height
-                                and with by adjusting the values in the snippet
-                                you copied.
-                            </li>
-                        </ul>
-                    </div>
-
+                <div class="flex flex-col gap-4 mt-4">
                     <h1
-                        class="text-black text-xl lg:text-2xl 2xl:text-[1.75rem] 2xl:leading-[2.5rem] max-w-[100ch]"
+                        class="text-black text-2xl lg:text-4xl lg:leading-[3.4rem] lg:text-[2.5rem] 2xl:leading-[3.5rem] max-w-[45ch]"
                     >
-                        Example of the embedded timetable
+                        Contact Us
                     </h1>
+                    <p
+                        class="text-[#565565] text-base leading-6 lg:text-lg lg:leading-8 2xl:text-xl 2xl:leading-9 max-w-[80ch]"
+                    >
+                        Clocks.world is an initiative by Troef Media. When you
+                        have questions or suggestions you can contact us using
+                        the contact form below
+                    </p>
+                </div>
 
-                    <img
-                        src="https://plus.unsplash.com/premium_photo-1664303991463-36449a65d3d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                        alt=""
-                        class="w-full my-4 rounded-xl max-h-[16rem] md:max-h-[24rem] lg:max-h-[30rem] 2xl:max-h-[40rem] object-cover"
-                    />
-                </article>
+                <form class="grid gap-7 mt-10">
+                    <div class="grid lg:grid-cols-2 gap-7">
+                        <div class="grid gap-3">
+                            <label class="contact__label" for="email"
+                                >Email
+                            </label>
+                            <input
+                                type="email"
+                                class="contact__input"
+                                placeholder="Email"
+                                id="email"
+                                required
+                            />
+                        </div>
+                        <div class="grid gap-3">
+                            <label class="contact__label" for="subject"
+                                >Subject</label
+                            >
+                            <input
+                                type="text"
+                                class="contact__input"
+                                placeholder="Subject"
+                                id="subject"
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <div class="grid gap-3">
+                        <label class="contact__label" for="message"
+                            >Your Message</label
+                        >
+                        <textarea
+                            class="contact__input"
+                            placeholder="Email"
+                            id="message"
+                            rows="10"
+                            required
+                        ></textarea>
+                    </div>
+                    <div class="mt-6">
+                        <button type="submit" class="btn-primary">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
             </section>
             <div class="grid gap-8">
-                <img src="/public/images/bubble-io-ad.png" alt="" />
                 <img src="/public/images/bubble-io-ad.png" alt="" />
             </div>
         </main>

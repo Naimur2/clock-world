@@ -120,4 +120,21 @@
     .btn-primary {
         @apply btn contact__label bg-[#FFC807] w-full max-w-[14rem] px-4 text-[#0C0C0D];
     }
+
+    .dropdown {
+        @apply relative;
+    }
+
+    .dropdown-button {
+        @apply nav-link flex gap-4 items-center;
+    }
+    .dropdown-content {
+        @apply bg-white absolute top-full left-0 w-64 max-h-0 transition-all duration-300 ease-in-out overflow-hidden scrollbar-hide z-[100];
+    }
+    .dropdown.active .dropdown-content {
+        @apply max-h-[25rem] overflow-auto;
+    }
+    .dropdown-link {
+        @apply w-full block px-4 py-3 hover:bg-[#cccccc50];
+    }
 }

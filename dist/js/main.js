@@ -9,6 +9,7 @@ const collapsables = document.querySelectorAll(".collapsable");
 const numberOnly = document.querySelectorAll("[number-only]");
 const minMax = document.querySelectorAll("[min-max]");
 const maxLen = document.querySelectorAll("[max-len]");
+const dropdowns = document.querySelectorAll(".dropdown");
 
 handleCollapsable(collapsables);
 hScrollHandler(horizontalScrollViews);
@@ -52,6 +53,44 @@ maxLen.forEach((input) => {
         if (e.target.value.length > max) {
             e.preventDefault();
             e.target.value = e.target.value.slice(0, max);
+        }
+    });
+});
+
+dropdowns.forEach((dropdown) => {
+    const dropdownBtn = dropdown.querySelector(".dropdown-button");
+    const dropdownMenu = dropdown.querySelector(".dropdown-content");
+
+    dropdownBtn.addEventListener("click", (e) => {
+        // select parent element with class dropdown
+        const parent = e.target.closest(".dropdown");
+        // select all dropdowns
+        const allDropdowns = document.querySelectorAll(".dropdown");
+        // if dropdown is not active
+        if (!parent.classList.contains("active")) {
+            // remove active class from all dropdowns
+            allDropdowns.forEach((dropdown) => {
+                dropdown.classList.remove("active");
+            });
+
+            // add active class to parent
+            parent.classList.add("active");
+            // add active class to dropdown menu
+            dropdownMenu.classList.add("active");
+        } else {
+            // remove active class from parent
+            parent.classList.remove("active");
+        }
+    });
+});
+
+document.addEventListener("click", (e) => {
+    const dropdowns = document.querySelectorAll(".dropdown");
+    const dropdownMenus = document.querySelectorAll(".dropdown-menu");
+
+    dropdowns.forEach((dropdown) => {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove("active");
         }
     });
 });
