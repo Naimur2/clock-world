@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/public/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/iconsax-font-icon@1.1.0/dist/icons.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./dist/style.css" />
+        <title>Terof media | Timer</title>
+    </head>
+    <body>
+        <header>
+            <div
+                class="container flex justify-between items-center flex-wrap py-4"
+            >
+                <a href="/"
+                    ><img
+                        class="max-w-md"
+                        src="/public/svg/logo.svg"
+                        alt="Clocks World"
+                /></a>
+                <img
+                    class="max-w-[30rem]"
+                    src="/public/images/grammerly-ad.png"
+                    alt="grammerly-ad"
+                />
+            </div>
+            <nav class="bg-[#FFC807] w-full py-4">
+                <div
+                    class="container flex justify-between items-center flex-wrap gap-4"
+                >
+                    <ul class="flex gap-4 text-[#392C0A]">
+                        <li>
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">City</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/articles.html"
+                                >Articles</a
+                            >
+                        </li>
+                        <li>
+                            <a class="nav-link active" href="/time-zones.html"
+                                >Time zones</a
+                            >
+                        </li>
+                        <li class="relative">
+                            <button class="nav-link" href="#">All Pages</button>
+                            <ul
+                                class="bg-white absolute top-full left-0 w-40 hidden"
+                            >
+                                <li>
+                                    <a
+                                        class="w-full block p-4 hover:bg-[#cccccc50]"
+                                        href="#"
+                                        >Time zones</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="w-full block p-4 hover:bg-[#cccccc50]"
+                                        href="#"
+                                        >Time zones</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="w-full block p-4 hover:bg-[#cccccc50]"
+                                        href="#"
+                                        >Time zones</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div
+                        class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full max-w-lg flex gap-4"
+                    >
+                        <img
+                            src="/public/icons/search-normal.svg"
+                            alt="search"
+                            class=""
+                        />
+                        <input
+                            type="text"
+                            class="w-full p-0 placeholder:text-[#55534F] focus:outline-none"
+                            placeholder="Search for a city"
+                        />
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="grid xl:grid-cols-[auto,20rem] py-10 container gap-8">
+            <section class="flex flex-col gap-4 py-8 px-4 overflow-hidden">
+                <div class="flex items-center gap-4">
+                    <a href="/" class="text-gray lg:text-lg xl:text-xl"
+                        >All Pages</a
+                    >
+                    <i
+                        class="isax icon-arrow-right-3 text-gray lg:text-lg xl:text-xl mt-2"
+                    ></i>
+                    <a
+                        href="/timer.html"
+                        class="text-black lg:text-lg xl:text-xl font-bold"
+                        >Timer</a
+                    >
+                </div>
+
+                <div class="timer-sec stopwatch bg-timerBg" id="timer">
+                    <div class="timer__time">
+                        <div class="timer__time-box">
+                            <h2 class="timer__time-text timer__days">00</h2>
+                            <p class="timer__time-desc">Days</p>
+                        </div>
+                        <span class="timer__time-separator">:</span>
+                        <div class="timer__time-box">
+                            <h2 class="timer__time-text timer__hours">00</h2>
+                            <p class="timer__time-desc">Hours</p>
+                        </div>
+                        <span class="timer__time-separator">:</span>
+                        <div class="timer__time-box">
+                            <h2 class="timer__time-text timer__minutes">00</h2>
+                            <p class="timer__time-desc">Minutes</p>
+                        </div>
+                        <span class="timer__time-separator">:</span>
+                        <div class="timer__time-box">
+                            <h2 class="timer__time-text timer__seconds">00</h2>
+                            <p class="timer__time-desc">Seconds</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-center items-center gap-4 lg:gap-6 xl:gap-8 flex-wrap"
+                    >
+                        <button class="bg-[#FFC807] time__start timer__btn">
+                            <img
+                                class="h-4 w-4 lg:h-5 lg:w-5 xl:h-6 xl:w-5"
+                                src="/public/icons/play-circle.svg"
+                                alt=""
+                            />
+                            <span
+                                class="text-black font-bold text-xs lg:tex-sm xl:text-base"
+                                >Start</span
+                            >
+                        </button>
+                        <button
+                            class="bg-[#D0CFCB] time__reset timer__btn hidden"
+                        >
+                            <img
+                                class="h-4 w-4 lg:h-5 lg:w-5 xl:h-6 xl:w-5"
+                                src="/public/icons/rotate.svg"
+                                alt=""
+                            />
+
+                            <span
+                                class="text-black font-bold text-xs lg:tex-sm xl:text-base"
+                                >Reset</span
+                            >
+                        </button>
+                    </div>
+                </div>
+
+                <h1 class="section-heading__sub mt-6 xl:mt-8">
+                    Manual timer settings
+                </h1>
+
+                <form
+                    id="stopwatchForm"
+                    class="timer-sec bg-white shadow-xl py-12 xl:py-16 2xl:py-16"
+                >
+                    <div class="timer__time 2xl:gap-10">
+                        <div
+                            class="timer__time-box xl:px-6 2xl:px-6 rounded-lg bg-[#FFF9EA] border-[1.5px] border-[#FFC807]"
+                        >
+                            <input
+                                class="timer__time-text xl:text-2xl 2xl:text-4xl text-center focus:outline-none bg-transparent !max-w-[5rem]"
+                                type="number"
+                                value="00"
+                                max-len="2"
+                                number-only="true"
+                                min="0"
+                                max="99"
+                                maxlength="2"
+                                min-max="0-99"
+                                name="days"
+                            />
+
+                            <p class="timer__time-desc">Days</p>
+                        </div>
+                        <span
+                            class="timer__time-separator xl:text-2xl 2xl:text-4xl text-black"
+                            >:</span
+                        >
+                        <div
+                            class="timer__time-box xl:px-6 2xl:px-6 rounded-lg bg-[#FFF9EA] border-[1.5px] border-[#FFC807]"
+                        >
+                            <input
+                                class="timer__time-text xl:text-2xl 2xl:text-4xl text-center focus:outline-none bg-transparent !max-w-[5rem]"
+                                type="number"
+                                value="00"
+                                max-len="2"
+                                number-only="true"
+                                min="0"
+                                max="24"
+                                maxlength="2"
+                                min-max="0-24"
+                                name="hours"
+                            />
+                            <p class="timer__time-desc">Hours</p>
+                        </div>
+                        <span
+                            class="timer__time-separator xl:text-2xl 2xl:text-4xl text-black"
+                            >:</span
+                        >
+                        <div
+                            class="timer__time-box xl:px-6 2xl:px-6 rounded-lg bg-[#FFF9EA] border-[1.5px] border-[#FFC807]"
+                        >
+                            <input
+                                class="timer__time-text xl:text-2xl 2xl:text-4xl text-center focus:outline-none bg-transparent !max-w-[5rem]"
+                                type="number"
+                                value="00"
+                                max-len="2"
+                                number-only="true"
+                                min="0"
+                                max="59"
+                                maxlength="2"
+                                min-max="0-59"
+                                name="minutes"
+                            />
+                            <p class="timer__time-desc">Minutes</p>
+                        </div>
+                        <span
+                            class="timer__time-separator xl:text-2xl 2xl:text-4xl text-black"
+                            >:</span
+                        >
+                        <div
+                            class="timer__time-box xl:px-6 2xl:px-6 rounded-lg bg-[#FFF9EA] border-[1.5px] border-[#FFC807]"
+                        >
+                            <input
+                                class="timer__time-text xl:text-2xl 2xl:text-4xl text-center focus:outline-none bg-transparent !max-w-[5rem]"
+                                type="number"
+                                value="00"
+                                max-len="2"
+                                number-only="true"
+                                min="0"
+                                max="59"
+                                maxlength="2"
+                                min-max="0-59"
+                                name="seconds"
+                            />
+                            <p class="timer__time-desc">Seconds</p>
+                        </div>
+                    </div>
+                    <div class="w-full max-w-[20rem]">
+                        <button
+                            class="bg-[#FFC807] time__start text-black font-bold text-xs lg:tex-sm xl:text-base !w-full px-4 py-3 rounded-lg"
+                        >
+                            Start Timer
+                        </button>
+                    </div>
+                </form>
+
+                <h1 class="section-heading__sub mt-6 xl:mt-8">Use a preset</h1>
+                <div class="grid gap-8 lg:grid-cols-2 mt-10">
+                    <div class="card">
+                        <ul class="grid gap-4">
+                            <li
+                                class="bg-[#F7F8FA] p-4 text-center text-black cursor-pointer font-bold text-lg sm:text-xl lg:text-2xl 2xl:text-[1.5rem]"
+                            >
+                                10 seconds timer
+                            </li>
+                            <li
+                                class="bg-[#F7F8FA] p-4 text-center text-black cursor-pointer font-bold text-lg sm:text-xl lg:text-2xl 2xl:text-[1.5rem]"
+                            >
+                                1 minute timer
+                            </li>
+                            <li
+                                class="bg-[#F7F8FA] p-4 text-center text-black cursor-pointer font-bold text-lg sm:text-xl lg:text-2xl 2xl:text-[1.5rem]"
+                            >
+                                10 minutes timer
+                            </li>
+                            <li
+                                class="bg-[#F7F8FA] p-4 text-center text-black cursor-pointer font-bold text-lg sm:text-xl lg:text-2xl 2xl:text-[1.5rem]"
+                            >
+                                15 minutes timer
+                            </li>
+                            <li
+                                class="bg-[#F7F8FA] p-4 text-center text-black cursor-pointer font-bold text-lg sm:text-xl lg:text-2xl 2xl:text-[1.5rem]"
+                            >
+                                1 hour timer
+                            </li>
+                            <li
+                                class="bg-[#F7F8FA] p-4 text-center text-black cursor-pointer font-bold text-lg sm:text-xl lg:text-2xl 2xl:text-[1.5rem]"
+                            >
+                                1 day timer
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="article-container">
+                        <div class="">
+                            <img
+                                src="https://images.unsplash.com/photo-1593501876007-034449c7fd63?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                alt=""
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+
+                        <div class="grid gap-4 p-6">
+                            <p class="text-base 2xl:text-lg text-[#83817E]">
+                                The time in Bangladesh is 6 hours ahead of UTC.
+                                The timezone in Bangladesh is Bangladesh
+                                Standard Time (BST). Bangladesh is Bangladesh
+                                Standard Time (BST). The timezone in Bangladesh
+                                is Bangladesh Standard Time
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="grid gap-8">
+                <img src="/public/images/bubble-io-ad.png" alt="" />
+                <img src="/public/images/bubble-io-ad.png" alt="" />
+            </div>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/iconsax-font-icon@1.1.0/fantasticonrc.min.js"></script>
+
+        <script type="module" src="/dist/js/main.js"></script>
+        <script type="module" src="/dist/js/timer.js"></script>
+    </body>
+</html>

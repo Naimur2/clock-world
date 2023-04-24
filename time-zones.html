@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/public/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/iconsax-font-icon@1.1.0/dist/icons.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./dist/style.css" />
+        <title>Terof media | Home</title>
+    </head>
+    <body>
+        <header>
+            <div
+                class="container flex justify-between items-center flex-wrap py-4"
+            >
+                <a href="/"
+                    ><img
+                        class="max-w-md"
+                        src="/public/svg/logo.svg"
+                        alt="Clocks World"
+                /></a>
+                <img
+                    class="max-w-[30rem]"
+                    src="/public/images/grammerly-ad.png"
+                    alt="grammerly-ad"
+                />
+            </div>
+
+            <nav class="bg-[#FFC807] w-full py-4">
+                <div
+                    class="container flex justify-between items-center flex-wrap gap-4"
+                >
+                    <ul class="flex gap-4 text-[#392C0A]">
+                        <li>
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">City</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/articles.html"
+                                >Articles</a
+                            >
+                        </li>
+                        <li>
+                            <a class="nav-link active" href="/time-zones.html"
+                                >Time zones</a
+                            >
+                        </li>
+                        <li class="relative">
+                            <button class="nav-link" href="#">All Pages</button>
+                            <ul
+                                class="bg-white absolute top-full left-0 w-40 hidden"
+                            >
+                                <li>
+                                    <a
+                                        class="w-full block p-4 hover:bg-[#cccccc50]"
+                                        href="#"
+                                        >Time zones</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="w-full block p-4 hover:bg-[#cccccc50]"
+                                        href="#"
+                                        >Time zones</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="w-full block p-4 hover:bg-[#cccccc50]"
+                                        href="#"
+                                        >Time zones</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div
+                        class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full max-w-lg flex gap-4"
+                    >
+                        <img
+                            src="/public/icons/search-normal.svg"
+                            alt="search"
+                            class=""
+                        />
+                        <input
+                            type="text"
+                            class="w-full p-0 placeholder:text-[#55534F] focus:outline-none"
+                            placeholder="Search for a city"
+                        />
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="grid xl:grid-cols-[auto,20rem] py-10 container gap-8">
+            <section class="flex flex-col gap-4 py-8 px-4 overflow-hidden">
+                <h1 class="section-heading__main">
+                    7 Continents time zone of the world
+                </h1>
+                <div class="card">
+                    <!-- create horizzontal scroll -->
+
+                    <ul
+                        class="overflow-auto whitespace-nowrap border-b-1 border-b-[#D0CFCB] scrollbar-hide horizontal-scroll"
+                    >
+                        <li class="timezone-tab cursor-default active">
+                            Africa
+                        </li>
+                        <li class="timezone-tab cursor-default">Asia</li>
+                        <li class="timezone-tab cursor-default">Australia</li>
+                        <li class="timezone-tab cursor-default">Europe</li>
+                        <li class="timezone-tab cursor-default">
+                            North America
+                        </li>
+                        <li class="timezone-tab cursor-default">
+                            South America
+                        </li>
+                        <li class="timezone-tab cursor-default">Antarctica</li>
+                    </ul>
+
+                    <ul class="grid gap-5 mt-10">
+                        <li>
+                            <a
+                                class="timezone-item"
+                                href="/time-zone-details.html"
+                                >CAT - Central Africa Time (UTC+2)</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="timezone-item"
+                                href="/time-zone-details.html"
+                                >CET - Central European Time (UTC+1)</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="timezone-item"
+                                href="/time-zone-details.html"
+                                >CVT - Cape Verda Time (UTC-1)</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="timezone-item"
+                                href="/time-zone-details.html"
+                                >EAT - Eastern European Time (UTC+3)</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="timezone-item"
+                                href="/time-zone-details.html"
+                                >GMT - Greenwich Mean Time (UTC)</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="timezone-item"
+                                href="/time-zone-details.html"
+                                >EET - Eastern European Time (UTC+2)</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="timezone-item"
+                                href="/time-zone-details.html"
+                                >CAT - Central Africa Time (UTC+2)</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="grid gap-8">
+                <img src="/public/images/bubble-io-ad.png" alt="" />
+                <img src="/public/images/bubble-io-ad.png" alt="" />
+            </div>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/iconsax-font-icon@1.1.0/fantasticonrc.min.js"></script>
+
+        <script type="module" src="/dist/js/main.js"></script>
+    </body>
+</html>

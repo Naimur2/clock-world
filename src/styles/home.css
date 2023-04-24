@@ -1,0 +1,26 @@
+@layer base {
+    .home-clock-container {
+        @apply w-full py-4 px-6 2xl:px-8 relative z-10 rounded-lg overflow-hidden bg-no-repeat bg-cover bg-center grid gap-4;
+    }
+    .home-clock {
+        @apply bg-[#0000006E] p-3 2xl:p-4 rounded-lg w-full max-w-[10rem] flex justify-center items-center;
+    }
+    .home-clock-time {
+        @apply text-white font-bold xl:text-lg 2xl:text-[1.75rem];
+    }
+    .home-clock-time-container {
+        @apply flex gap-1 2xl:gap-3 justify-self-end;
+    }
+    .home-clock-location {
+        @apply text-white text-lg 2xl:text-xl font-bold;
+    }
+    .home-clock-date {
+        @apply text-white text-xs 2xl:text-sm font-medium;
+    }
+    .home-clock-weather {
+        @apply text-white text-lg 2xl:text-xl;
+    }
+    .article-container {
+        @apply grid grid-rows-[25rem,auto] rounded-lg overflow-hidden gap-5 bg-white shadow-lg hover:shadow-2xl;
+    }
+}

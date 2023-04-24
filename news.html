@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/public/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/iconsax-font-icon@1.1.0/dist/icons.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./dist/style.css" />
+        <title>Terof media | News</title>
+    </head>
+    <body>
+        <header>
+            <div
+                class="container flex justify-between items-center flex-wrap py-4"
+            >
+                <a href="/"
+                    ><img
+                        class="max-w-md"
+                        src="/public/svg/logo.svg"
+                        alt="Clocks World"
+                /></a>
+                <img
+                    class="max-w-[30rem]"
+                    src="/public/images/grammerly-ad.png"
+                    alt="grammerly-ad"
+                />
+            </div>
+            <nav class="bg-[#FFC807] w-full py-4">
+                <div
+                    class="container flex justify-between items-center flex-wrap gap-4"
+                >
+                    <ul class="flex gap-4 text-[#392C0A]">
+                        <li>
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">City</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/articles.html"
+                                >Articles</a
+                            >
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/time-zones.html"
+                                >Time zones</a
+                            >
+                        </li>
+                        <li class="relative">
+                            <button class="nav-link" href="#">All Pages</button>
+                            <ul
+                                class="bg-white absolute top-full left-0 w-40 hidden"
+                            >
+                                <li>
+                                    <a
+                                        class="w-full block p-4 hover:bg-[#cccccc50]"
+                                        href="#"
+                                        >Time zones</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="w-full block p-4 hover:bg-[#cccccc50]"
+                                        href="#"
+                                        >Time zones</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="w-full block p-4 hover:bg-[#cccccc50]"
+                                        href="#"
+                                        >Time zones</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div
+                        class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full max-w-lg flex gap-4"
+                    >
+                        <img
+                            src="/public/icons/search-normal.svg"
+                            alt="search"
+                            class=""
+                        />
+                        <input
+                            type="text"
+                            class="w-full p-0 placeholder:text-[#55534F] focus:outline-none"
+                            placeholder="Search for a city"
+                        />
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="grid xl:grid-cols-[auto,20rem] py-10 container gap-8">
+            <section class="flex flex-col gap-4 py-8 px-4">
+                <div class="flex items-center gap-4">
+                    <a href="/" class="text-gray lg:text-lg xl:text-xl"
+                        >All Pages</a
+                    >
+                    <i
+                        class="isax icon-arrow-right-3 text-gray lg:text-lg xl:text-xl mt-2"
+                    ></i>
+                    <a
+                        href="/news.html"
+                        class="text-black lg:text-lg xl:text-xl font-bold"
+                    >
+                        News
+                    </a>
+                </div>
+
+                <article
+                    class="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 md:gap-6 xl:gap-10 justify-center items-center border-b-1 border-b-[#D0CFCB] py-8"
+                >
+                    <div
+                        class="h-full max-h-80 w-full md:h-44 md:w-48 xl:h-52 xl:w-52 rounded-xl overflow-hidden"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1602503497793-4094d8c53e88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
+                            alt=""
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div class="grid gap-4 p-6">
+                        <div class="grid gap-4">
+                            <p class="text-[#55534F]">
+                                Published at: Jan. 20, 2023
+                            </p>
+                            <h2 class="text-lg 2xl:text-2xl">
+                                If you could race around the world and celebrate
+                                the New Year in Many Time Zones...
+                            </h2>
+                            <p class="text-base 2xl:text-lg text-gray">
+                                It's mind-boggling to realize that the entire
+                                world does not enter the New Year at the exact
+                                same time. If you remember your earth science,
+                                the rotating planet on which humans dwell is
+                                separated into multiple time zones that pass
+                                by...
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 mt-5">
+                            <a
+                                href="/news-details.html"
+                                class="text-black font-bold [&+img]:hover:translate-x-2"
+                                >Read more</a
+                            >
+                            <img
+                                src="/public/icons/arrow-right.svg"
+                                alt=""
+                                class="transition-all duration-300"
+                            />
+                        </div>
+                    </div>
+                </article>
+                <article
+                    class="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 md:gap-6 xl:gap-10 justify-center items-center border-b-1 border-b-[#D0CFCB] py-8"
+                >
+                    <div
+                        class="h-full max-h-80 w-full md:h-44 md:w-48 xl:h-52 xl:w-52 rounded-xl overflow-hidden"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1504197832061-98356e3dcdcf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                            alt=""
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div class="grid gap-4 p-6">
+                        <div class="grid gap-4">
+                            <p class="text-[#55534F]">
+                                Published at: Jan. 20, 2023
+                            </p>
+                            <h2 class="text-lg 2xl:text-2xl">What is UTC?</h2>
+                            <p class="text-base 2xl:text-lg text-gray">
+                                As everyone probably knows, the world is divided
+                                into different time zones. For example, the
+                                Netherlands uses a different time zone than
+                                Australia...
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 mt-5">
+                            <a
+                                href="/news-details.html"
+                                class="text-black font-bold [&+img]:hover:translate-x-2"
+                                >Read more</a
+                            >
+                            <img
+                                src="/public/icons/arrow-right.svg"
+                                alt=""
+                                class="transition-all duration-300"
+                            />
+                        </div>
+                    </div>
+                </article>
+                <article
+                    class="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 md:gap-6 xl:gap-10 justify-center items-center border-b-1 border-b-[#D0CFCB] py-8"
+                >
+                    <div
+                        class="h-full max-h-80 w-full md:h-44 md:w-48 xl:h-52 xl:w-52 rounded-xl overflow-hidden"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+                            alt=""
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div class="grid gap-4 p-6">
+                        <div class="grid gap-4">
+                            <p class="text-[#55534F]">
+                                Published at: Jan. 20, 2023
+                            </p>
+                            <h2 class="text-lg 2xl:text-2xl">
+                                Why do we have time zones?
+                            </h2>
+                            <p class="text-base 2xl:text-lg text-gray">
+                                As everyone knows, the earth is round and
+                                rotates, in 24 hours, on its own axis. This
+                                means that in different places on the earth, the
+                                sun shines at different times. Very old times
+                                were determined locally by the position of the
+                                sun. When it was in the south, it was 12
+                                o'clock. The well-known sundial then always
+                                showed the time. In practice, this meant that at
+                                such a place it was 12 o'clock and a little
+                                further away it was half an hour later...
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 mt-5">
+                            <a
+                                href="/news-details.html"
+                                class="text-black font-bold [&+img]:hover:translate-x-2"
+                                >Read more</a
+                            >
+                            <img
+                                src="/public/icons/arrow-right.svg"
+                                alt=""
+                                class="transition-all duration-300"
+                            />
+                        </div>
+                    </div>
+                </article>
+                <article
+                    class="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 md:gap-6 xl:gap-10 justify-center items-center border-b-1 border-b-[#D0CFCB] py-8"
+                >
+                    <div
+                        class="h-full max-h-80 w-full md:h-44 md:w-48 xl:h-52 xl:w-52 rounded-xl overflow-hidden"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1606674556490-c2bbb4ee05e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+                            alt=""
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div class="grid gap-4 p-6">
+                        <div class="grid gap-4">
+                            <p class="text-[#55534F]">
+                                Published at: Jan. 20, 2023
+                            </p>
+                            <h2 class="text-lg 2xl:text-2xl">
+                                Long ago, a year used to have 500 days
+                            </h2>
+                            <p class="text-base 2xl:text-lg text-gray">
+                                The earth's spin is slowing down, and that has
+                                effect on the length of our days. Over the last
+                                century, the average day has grown by about 2
+                                milliseconds because of this phenomenon. This
+                                might not seem like much, but it can add up over
+                                time...
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 mt-5">
+                            <a
+                                href="/news-details.html"
+                                class="text-black font-bold [&+img]:hover:translate-x-2"
+                                >Read more</a
+                            >
+                            <img
+                                src="/public/icons/arrow-right.svg"
+                                alt=""
+                                class="transition-all duration-300"
+                            />
+                        </div>
+                    </div>
+                </article>
+                <div
+                    class="flex gap-4 justify-center flex-wrap lg:justify-end mt-10"
+                >
+                    <button class="btn-outline-gray px-2">
+                        <img src="/public/icons/back.svg" alt="" />
+                    </button>
+
+                    <button class="btn px-4 py-2 bg-[#FFC807] text-white">
+                        1
+                    </button>
+
+                    <button class="btn px-4 py-2 text-[#ADABA7]">2</button>
+
+                    <button class="btn px-4 py-2 text-[#ADABA7]">...</button>
+                    <button class="btn px-4 py-2 text-[#ADABA7]">9</button>
+
+                    <button class="btn-outline-gray px-2">
+                        <img src="/public/icons/next.svg" alt="" />
+                    </button>
+                </div>
+            </section>
+            <div class="grid gap-8">
+                <img src="/public/images/bubble-io-ad.png" alt="" />
+                <img src="/public/images/bubble-io-ad.png" alt="" />
+            </div>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/iconsax-font-icon@1.1.0/fantasticonrc.min.js"></script>
+
+        <script type="module" src="/dist/js/main.js"></script>
+    </body>
+</html>

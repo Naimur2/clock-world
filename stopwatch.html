@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/public/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/iconsax-font-icon@1.1.0/dist/icons.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./dist/style.css" />
+        <title>Terof media | Stopwatch</title>
+    </head>
+    <body>
+        <header>
+            <div
+                class="container flex justify-between items-center flex-wrap py-4"
+            >
+                <a href="/"
+                    ><img
+                        class="max-w-md"
+                        src="/public/svg/logo.svg"
+                        alt="Clocks World"
+                /></a>
+                <img
+                    class="max-w-[30rem]"
+                    src="/public/images/grammerly-ad.png"
+                    alt="grammerly-ad"
+                />
+            </div>
+            <nav class="bg-[#FFC807] w-full py-4">
+                <div
+                    class="container flex justify-between items-center flex-wrap gap-4"
+                >
+                    <ul class="flex gap-4 text-[#392C0A]">
+                        <li>
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">City</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/articles.html"
+                                >Articles</a
+                            >
+                        </li>
+                        <li>
+                            <a class="nav-link active" href="/time-zones.html"
+                                >Time zones</a
+                            >
+                        </li>
+                        <li class="relative">
+                            <button class="nav-link" href="#">All Pages</button>
+                            <ul
+                                class="bg-white absolute top-full left-0 w-40 hidden"
+                            >
+                                <li>
+                                    <a
+                                        class="w-full block p-4 hover:bg-[#cccccc50]"
+                                        href="#"
+                                        >Time zones</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="w-full block p-4 hover:bg-[#cccccc50]"
+                                        href="#"
+                                        >Time zones</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="w-full block p-4 hover:bg-[#cccccc50]"
+                                        href="#"
+                                        >Time zones</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div
+                        class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full max-w-lg flex gap-4"
+                    >
+                        <img
+                            src="/public/icons/search-normal.svg"
+                            alt="search"
+                            class=""
+                        />
+                        <input
+                            type="text"
+                            class="w-full p-0 placeholder:text-[#55534F] focus:outline-none"
+                            placeholder="Search for a city"
+                        />
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="grid xl:grid-cols-[auto,20rem] py-10 container gap-8">
+            <section class="flex flex-col gap-4 py-8 px-4 overflow-hidden">
+                <div class="flex items-center gap-4">
+                    <a href="/" class="text-gray lg:text-lg xl:text-xl"
+                        >All Pages</a
+                    >
+                    <i
+                        class="isax icon-arrow-right-3 text-gray lg:text-lg xl:text-xl mt-2"
+                    ></i>
+                    <a
+                        href="/stopwatch.html"
+                        class="text-black lg:text-lg xl:text-xl font-bold"
+                    >
+                        Stopwatch
+                    </a>
+                </div>
+
+                <div class="timer-sec stopwatch bg-timerBg" id="stopwatch">
+                    <div class="timer__time">
+                        <div class="timer__time-box">
+                            <h2 class="timer__time-text timer__days">00</h2>
+                            <p class="timer__time-desc">Days</p>
+                        </div>
+                        <span class="timer__time-separator">:</span>
+                        <div class="timer__time-box">
+                            <h2 class="timer__time-text timer__hours">00</h2>
+                            <p class="timer__time-desc">Hours</p>
+                        </div>
+                        <span class="timer__time-separator">:</span>
+                        <div class="timer__time-box">
+                            <h2 class="timer__time-text timer__minutes">00</h2>
+                            <p class="timer__time-desc">Minutes</p>
+                        </div>
+                        <span class="timer__time-separator">:</span>
+                        <div class="timer__time-box">
+                            <h2 class="timer__time-text timer__seconds">00</h2>
+                            <p class="timer__time-desc">Seconds</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-center items-center gap-4 lg:gap-6 xl:gap-8 flex-wrap"
+                    >
+                        <button class="bg-[#FFC807] time__start timer__btn">
+                            <img
+                                class="h-4 w-4 lg:h-5 lg:w-5 xl:h-6 xl:w-5"
+                                src="/public/icons/play-circle.svg"
+                                alt=""
+                            />
+                            <span
+                                class="text-black font-bold text-xs lg:tex-sm xl:text-base"
+                                >Start</span
+                            >
+                        </button>
+                        <button
+                            class="bg-[#D0CFCB] time__reset timer__btn hidden"
+                        >
+                            <img
+                                class="h-4 w-4 lg:h-5 lg:w-5 xl:h-6 xl:w-5"
+                                src="/public/icons/rotate.svg"
+                                alt=""
+                            />
+
+                            <span
+                                class="text-black font-bold text-xs lg:tex-sm xl:text-base"
+                                >Reset</span
+                            >
+                        </button>
+                        <button
+                            class="bg-[#D5F6F4] time__pause timer__btn hidden"
+                        >
+                            <img
+                                class="h-4 w-4 lg:h-5 lg:w-5 xl:h-6 xl:w-5"
+                                src="/public/icons/pause-circle.svg"
+                                alt=""
+                            />
+
+                            <span
+                                class="text-black font-bold text-xs lg:tex-sm xl:text-base"
+                            >
+                                Pause
+                            </span>
+                        </button>
+                        <button
+                            class="bg-[#e3e9e9] time__resume timer__btn hidden"
+                        >
+                            <img
+                                class="h-4 w-4 lg:h-5 lg:w-5 xl:h-6 xl:w-5"
+                                src="/public/icons/play-circle.svg"
+                                alt=""
+                            />
+
+                            <span
+                                class="text-black font-bold text-xs lg:tex-sm xl:text-base"
+                            >
+                                Resume
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <h1 class="section-heading__sub mt-6 xl:mt-10">
+                    Stopwatch FAQ
+                </h1>
+                <div class="card grid gap-4 max-h-[100rem]">
+                    <div class="collapsable">
+                        <div class="collapsable-header">
+                            <h2 class="collapsable-title capitalize">
+                                see the stopwatch glitch sometimes, does this
+                                affect accuracy?
+                            </h2>
+                            <i
+                                class="isax icon-arrow-up-2 text-black text-2xl lg:text-4xl collapsable-icon"
+                            ></i>
+                        </div>
+
+                        <div class="collapsable-content">
+                            <div class="card mt-2">
+                                <p class="collapsable-content-text">
+                                    First of all: this does not affect the
+                                    stopwatches accuracy. Some browsers have
+                                    trouble displaying the milliseconds. The
+                                    stopwatches measurement is aligned with your
+                                    PC's internal clock. This makes deviation
+                                    caused by a slow browser impossible
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapsable">
+                        <div class="collapsable-header bg-[#FFE3DF]">
+                            <h2 class="collapsable-title capitalize">
+                                What are the most common Isecases for the
+                                stopwatch?
+                            </h2>
+                            <i
+                                class="isax icon-arrow-up-2 text-black text-2xl lg:text-4xl collapsable-icon"
+                            ></i>
+                        </div>
+
+                        <div class="collapsable-content">
+                            <div class="card mt-2">
+                                <p class="collapsable-content-text">
+                                    First of all: this does not affect the
+                                    stopwatches accuracy. Some browsers have
+                                    trouble displaying the milliseconds. The
+                                    stopwatches measurement is aligned with your
+                                    PC's internal clock. This makes deviation
+                                    caused by a slow browser impossible
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapsable">
+                        <div class="collapsable-header bg-[#DCDAFF]">
+                            <h2 class="collapsable-title capitalize">
+                                Should I use this stopwatch for official time
+                                measurement
+                            </h2>
+                            <i
+                                class="isax icon-arrow-up-2 text-black text-2xl lg:text-4xl collapsable-icon"
+                            ></i>
+                        </div>
+
+                        <div class="collapsable-content">
+                            <div class="card mt-2">
+                                <p class="collapsable-content-text">
+                                    First of all: this does not affect the
+                                    stopwatches accuracy. Some browsers have
+                                    trouble displaying the milliseconds. The
+                                    stopwatches measurement is aligned with your
+                                    PC's internal clock. This makes deviation
+                                    caused by a slow browser impossible
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapsable">
+                        <div class="collapsable-header bg-[#FFF2C3]">
+                            <h2 class="collapsable-title capitalize">
+                                Can I display the stopwatch full screen?
+                            </h2>
+                            <i
+                                class="isax icon-arrow-up-2 text-black text-2xl lg:text-4xl collapsable-icon"
+                            ></i>
+                        </div>
+
+                        <div class="collapsable-content">
+                            <div class="card mt-2">
+                                <p class="collapsable-content-text">
+                                    First of all: this does not affect the
+                                    stopwatches accuracy. Some browsers have
+                                    trouble displaying the milliseconds. The
+                                    stopwatches measurement is aligned with your
+                                    PC's internal clock. This makes deviation
+                                    caused by a slow browser impossible
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="grid gap-8">
+                <img src="/public/images/bubble-io-ad.png" alt="" />
+                <img src="/public/images/bubble-io-ad.png" alt="" />
+            </div>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/iconsax-font-icon@1.1.0/fantasticonrc.min.js"></script>
+
+        <script type="module" src="/dist/js/main.js"></script>
+        <script type="module" src="/dist/js/stopwatch.js"></script>
+    </body>
+</html>

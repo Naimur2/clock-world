@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+@import "./styles/main.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: "Mulish", sans-serif;
+    }
+
+    .container {
+        @apply mx-auto px-4 2xl:!max-w-[110rem];
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-bold text-[#2A2927];
+    }
+
+    p,
+    span,
+    a {
+        @apply text-sm xl:text-base;
+    }
+    .card {
+        @apply bg-white shadow-lg rounded-lg overflow-hidden p-4 xl:p-8;
+    }
+
+    .timezone-tab-after {
+        @apply after:content-empty after:block  after:left-4 after:right-4 after:h-1 after:absolute after:bottom-0 after:bg-black
+        after:transition-all after:duration-300 after:ease-in-out after:scale-0;
+    }
+
+    .timezone-tab {
+        @apply relative px-10 py-3 lg:py-4 xl:py-5 inline-block text-[#83817E] text-sm lg:text-base xl:text-xl timezone-tab-after;
+    }
+
+    .timezone-tab.active {
+        @apply text-black text-xl xl:text-2xl font-bold after:scale-100;
+    }
+
+    .horizontal-scroll {
+        cursor: grab;
+    }
+    .timezone-item {
+        @apply block  font-semibold xl:font-bold text-sm sm:text-base lg:text-lg xl:text-[1.75rem] xl:leading-8 bg-[#F7F8FA] 
+         p-4 xl:py-6 px-8 rounded-2xl hover:shadow-lg transition-all duration-300 ease-in-out;
+    }
+
+    .timezone-item > * {
+        @apply font-semibold xl:font-bold text-sm sm:text-base lg:text-lg xl:text-[1.75rem] xl:leading-8;
+    }
+
+    .timer-sec {
+        @apply py-20 xl:py-24 2xl:py-28 px-4 bg-no-repeat bg-cover rounded-xl flex flex-col flex-wrap justify-center items-center gap-8 lg:gap-10 xl:gap-16 mt-10;
+    }
+
+    .timer__time-text {
+        @apply text-2xl font-bold lg:text-4xl  xl:text-6xl  2xl:text-[4rem] 2xl:leading-[5rem] text-[#0D0032];
+    }
+
+    .timer__time-desc {
+        @apply text-[#55534F] font-medium text-[0.625rem] lg:text-sm;
+    }
+
+    .timer__time-separator {
+        @apply font-bold lg:text-4xl  xl:text-6xl  2xl:text-[4rem] 2xl:leading-[5rem] text-white;
+    }
+
+    .timer__time-box {
+        @apply bg-white px-4 py-2  md:px-6 md:py-3 2xl:px-8 2xl:py-4 rounded-xl lg:rounded-2xl 2xl:rounded-3xl grid place-items-center gap-1;
+    }
+    .timer__time {
+        @apply flex justify-center items-center gap-3 sm:gap-4 lg:gap-6 2xl:gap-8 flex-wrap;
+    }
+    .timer__btn {
+        @apply px-4 py-3  md:px-5 md:py-3  lg:px-6 lg:py-3  xl:px-7 xl:py-4 2xl:px-8 2xl:py-4 rounded-xl flex justify-center items-center gap-2;
+    }
+
+    /* hide number arrow */
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    .section-heading__main {
+        @apply text-black text-2xl font-extrabold lg:leading-[4rem] lg:text-[3.5rem] 2xl:leading-[4.5rem] max-w-[45ch] my-4;
+    }
+    .section-heading__sub {
+        @apply text-black text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold my-2 sm:my-3 xl:my-4;
+    }
+
+    .collapsable-title {
+        @apply font-bold text-black text-base lg:text-xl 2xl:text-2xl;
+    }
+    .collapsable-content-text {
+        @apply text-[#55534F] text-sm lg:text-base 2xl:text-[1.375rem] 2xl:leading-[2.1rem];
+    }
+
+    .list-step {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        color: inherit;
+        list-style: none;
+    }
+
+    .contact__input {
+        @apply w-full p-4 border !bg-white border-[#D4D4E2] rounded-lg focus:outline-none focus:border-[#6b6464];
+    }
+    .contact__label {
+        @apply text-[#565565] text-xs sm:text-sm lg:text-base xl:text-lg font-medium;
+    }
+    .btn-primary {
+        @apply btn contact__label bg-[#FFC807] w-full max-w-[14rem] px-4 text-[#0C0C0D];
+    }
+}

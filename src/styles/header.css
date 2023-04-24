@@ -1,0 +1,14 @@
+@layer base {
+    .nav-link-after {
+        @apply after:content-empty after:block  after:left-4 after:right-4 after:h-1 after:absolute after:bottom-0 after:bg-[#2A2927]
+        after:transition-all after:duration-300 after:ease-in-out after:scale-0;
+    }
+
+    .nav-link {
+        @apply text-[#392C0A] py-2 px-4 inline-block  xl:text-lg relative text-center
+        nav-link-after hover:text-[#2A2927] hover:font-bold hover:after:scale-100;
+    }
+    .nav-link.active {
+        @apply text-[#2A2927] font-bold after:scale-100;
+    }
+}
