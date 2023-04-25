@@ -11,30 +11,41 @@
         <link rel="stylesheet" href="./dist/style.css" />
         <title>Terof media | Home</title>
     </head>
-    <body>
+    <body class="relative">
         <header>
             <div
-                class="container flex justify-between items-center flex-wrap py-4"
+                class="container flex justify-center lg:justify-between items-center flex-wrap py-6 relative"
             >
                 <a href="/"
                     ><img
-                        class="max-w-md"
+                        class="max-w-[8rem] sm:max-w-[10rem] lg:max-w-[14rem] xl:max-w-[20rem]"
                         src="/public/svg/logo.svg"
                         alt="Clocks World"
                 /></a>
                 <img
-                    class="max-w-[30rem]"
+                    src="/public/svg/nav-bg.svg"
+                    alt=""
+                    class="absolute top-[-150px] left-[-5%] sm:top-[-200px] sm:left-[-20%] md:top-[-200px] md:left-[-20%] w-[100%] lg:top-[-300px] lg:left-[-10%] xl:top-[-500px] xl:left-[-10%]"
+                />
+                <img
+                    class="lg:max-w-[25rem] xl:max-w-[30rem] hidden lg:block"
                     src="/public/images/grammerly-ad.png"
                     alt="grammerly-ad"
                 />
             </div>
-            <nav class="bg-[#FFC807] w-full py-4">
+            <nav class="bg-[#FFC807] w-full py-4 navbar">
                 <div
                     class="container flex justify-between items-center flex-wrap gap-4"
                 >
-                    <ul class="flex gap-4 text-[#392C0A]">
+                    <img
+                        src="/public/icons/menu.svg"
+                        alt="menu"
+                        class="block lg:hidden menu-btn"
+                    />
+
+                    <ul class="flex gap-4 text-[#392C0A] nav-items">
                         <li>
-                            <a class="nav-link active" href="/">Home</a>
+                            <a class="nav-link" href="/">Home</a>
                         </li>
                         <li>
                             <a class="nav-link" href="/city.html">City</a>
@@ -116,8 +127,14 @@
                         </li>
                     </ul>
 
+                    <img
+                        src="/public/icons/search-normal.svg"
+                        alt="search"
+                        class="block lg:hidden"
+                    />
+
                     <div
-                        class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full max-w-lg flex gap-4"
+                        class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full max-w-xs lg:max-w-sm 2xl:max-w-lg gap-4 hidden lg:flex"
                     >
                         <img
                             src="/public/icons/search-normal.svg"
@@ -131,10 +148,13 @@
                         />
                     </div>
                 </div>
+                <div class="nav-backdrop"></div>
             </nav>
         </header>
 
-        <main class="grid xl:grid-cols-[auto,20rem] py-10 container gap-8">
+        <main
+            class="grid xl:grid-cols-[auto,20rem] py-10 container gap-8 z-[10]"
+        >
             <div class="flex flex-col gap-10">
                 <section class="grid lg:grid-cols-2 gap-8 py-8">
                     <div class="home-clock-container bg-homeClock1bg">
@@ -149,9 +169,15 @@
                                 </h6>
                                 <p class="home-clock-date">Wed, 1 Feb, 2023</p>
                             </div>
-                            <div class="home-clock-time-container">
+                            <div
+                                class="home-clock-time-container digital-clock"
+                            >
                                 <div class="home-clock">
-                                    <h5 class="home-clock-time">11</h5>
+                                    <h5
+                                        class="home-clock-time digital-clock__hour"
+                                    >
+                                        11
+                                    </h5>
                                 </div>
                                 <div
                                     class="mx-1 flex justify-center items-center"
@@ -159,10 +185,18 @@
                                     <h5 class="home-clock-time">:</h5>
                                 </div>
                                 <div class="home-clock">
-                                    <h5 class="home-clock-time">47</h5>
+                                    <h5
+                                        class="home-clock-time digital-clock__minute"
+                                    >
+                                        47
+                                    </h5>
                                 </div>
                                 <div class="home-clock">
-                                    <h5 class="home-clock-time">AM</h5>
+                                    <h5
+                                        class="home-clock-time digital-clock__meridiam"
+                                    >
+                                        AM
+                                    </h5>
                                 </div>
                             </div>
                         </div>
@@ -179,9 +213,15 @@
                                 </h6>
                                 <p class="home-clock-date">Wed, 1 Feb, 2023</p>
                             </div>
-                            <div class="home-clock-time-container">
+                            <div
+                                class="home-clock-time-container digital-clock"
+                            >
                                 <div class="home-clock">
-                                    <h5 class="home-clock-time">11</h5>
+                                    <h5
+                                        class="home-clock-time digital-clock__hour"
+                                    >
+                                        11
+                                    </h5>
                                 </div>
                                 <div
                                     class="mx-1 flex justify-center items-center"
@@ -189,10 +229,18 @@
                                     <h5 class="home-clock-time">:</h5>
                                 </div>
                                 <div class="home-clock">
-                                    <h5 class="home-clock-time">47</h5>
+                                    <h5
+                                        class="home-clock-time digital-clock__minute"
+                                    >
+                                        47
+                                    </h5>
                                 </div>
                                 <div class="home-clock">
-                                    <h5 class="home-clock-time">AM</h5>
+                                    <h5
+                                        class="home-clock-time digital-clock__meridiam"
+                                    >
+                                        AM
+                                    </h5>
                                 </div>
                             </div>
                         </div>
@@ -209,9 +257,15 @@
                                 </h6>
                                 <p class="home-clock-date">Wed, 1 Feb, 2023</p>
                             </div>
-                            <div class="home-clock-time-container">
+                            <div
+                                class="home-clock-time-container digital-clock"
+                            >
                                 <div class="home-clock">
-                                    <h5 class="home-clock-time">11</h5>
+                                    <h5
+                                        class="home-clock-time digital-clock__hour"
+                                    >
+                                        11
+                                    </h5>
                                 </div>
                                 <div
                                     class="mx-1 flex justify-center items-center"
@@ -219,10 +273,18 @@
                                     <h5 class="home-clock-time">:</h5>
                                 </div>
                                 <div class="home-clock">
-                                    <h5 class="home-clock-time">47</h5>
+                                    <h5
+                                        class="home-clock-time digital-clock__minute"
+                                    >
+                                        47
+                                    </h5>
                                 </div>
                                 <div class="home-clock">
-                                    <h5 class="home-clock-time">AM</h5>
+                                    <h5
+                                        class="home-clock-time digital-clock__meridiam"
+                                    >
+                                        AM
+                                    </h5>
                                 </div>
                             </div>
                         </div>
@@ -239,9 +301,15 @@
                                 </h6>
                                 <p class="home-clock-date">Wed, 1 Feb, 2023</p>
                             </div>
-                            <div class="home-clock-time-container">
+                            <div
+                                class="home-clock-time-container digital-clock"
+                            >
                                 <div class="home-clock">
-                                    <h5 class="home-clock-time">11</h5>
+                                    <h5
+                                        class="home-clock-time digital-clock__hour"
+                                    >
+                                        11
+                                    </h5>
                                 </div>
                                 <div
                                     class="mx-1 flex justify-center items-center"
@@ -249,10 +317,18 @@
                                     <h5 class="home-clock-time">:</h5>
                                 </div>
                                 <div class="home-clock">
-                                    <h5 class="home-clock-time">47</h5>
+                                    <h5
+                                        class="home-clock-time digital-clock__minute"
+                                    >
+                                        47
+                                    </h5>
                                 </div>
                                 <div class="home-clock">
-                                    <h5 class="home-clock-time">AM</h5>
+                                    <h5
+                                        class="home-clock-time digital-clock__meridiam"
+                                    >
+                                        AM
+                                    </h5>
                                 </div>
                             </div>
                         </div>
@@ -468,5 +544,6 @@
 
         <script src="https://cdn.jsdelivr.net/npm/iconsax-font-icon@1.1.0/fantasticonrc.min.js"></script>
         <script type="module" src="/dist/js/main.js"></script>
+        <script src="/dist/js/digital-clock.js"></script>
     </body>
 </html>

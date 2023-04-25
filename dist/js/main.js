@@ -94,3 +94,34 @@ document.addEventListener("click", (e) => {
         }
     });
 });
+
+
+const navbar = document.querySelector(".navbar");
+const menuBtn = document.querySelector(".menu-btn");
+const navBackdrop = document.querySelector(".nav-backdrop");
+
+menuBtn.addEventListener("click", (e) => {
+    navbar.classList.toggle("open");
+});
+
+const navLinks = document.querySelectorAll(".nav-link");
+
+navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+        navbar.classList.remove("open");
+    });
+});
+
+navBackdrop.addEventListener("click", (e) => {
+    navbar.classList.remove("open");
+});
+
+
+
+// dynamicallly add active link to nav linkk depending on the routes
+
+navLinks.forEach((link) => {
+    if (link.href === window.location.href) {
+        link.classList.add("active");
+    }
+});

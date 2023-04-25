@@ -14,25 +14,36 @@
     <body bg="#F8F8F8">
         <header>
             <div
-                class="container flex justify-between items-center flex-wrap py-4"
+                class="container flex justify-center lg:justify-between items-center flex-wrap py-6 relative"
             >
                 <a href="/"
                     ><img
-                        class="max-w-md"
+                        class="max-w-[8rem] sm:max-w-[10rem] lg:max-w-[14rem] xl:max-w-[20rem]"
                         src="/public/svg/logo.svg"
                         alt="Clocks World"
                 /></a>
                 <img
-                    class="max-w-[30rem]"
+                    src="/public/svg/nav-bg.svg"
+                    alt=""
+                    class="absolute top-[-150px] left-[-5%] sm:top-[-200px] sm:left-[-20%] md:top-[-200px] md:left-[-20%] w-[100%] lg:top-[-300px] lg:left-[-10%] xl:top-[-500px] xl:left-[-10%]"
+                />
+                <img
+                    class="lg:max-w-[25rem] xl:max-w-[30rem] hidden lg:block"
                     src="/public/images/grammerly-ad.png"
                     alt="grammerly-ad"
                 />
             </div>
-            <nav class="bg-[#FFC807] w-full py-4">
+            <nav class="bg-[#FFC807] w-full py-4 navbar">
                 <div
                     class="container flex justify-between items-center flex-wrap gap-4"
                 >
-                    <ul class="flex gap-4 text-[#392C0A]">
+                    <img
+                        src="/public/icons/menu.svg"
+                        alt="menu"
+                        class="block lg:hidden menu-btn"
+                    />
+
+                    <ul class="flex gap-4 text-[#392C0A] nav-items">
                         <li>
                             <a class="nav-link" href="/">Home</a>
                         </li>
@@ -50,7 +61,7 @@
                             >
                         </li>
                         <li class="dropdown">
-                            <button class="dropdown-button active">
+                            <button class="dropdown-button">
                                 <span>All Pages</span>
                                 <img
                                     src="/public/icons/arrow-down.svg"
@@ -116,8 +127,14 @@
                         </li>
                     </ul>
 
+                    <img
+                        src="/public/icons/search-normal.svg"
+                        alt="search"
+                        class="block lg:hidden"
+                    />
+
                     <div
-                        class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full max-w-lg flex gap-4"
+                        class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full max-w-xs lg:max-w-sm 2xl:max-w-lg gap-4 hidden lg:flex"
                     >
                         <img
                             src="/public/icons/search-normal.svg"
@@ -131,6 +148,7 @@
                         />
                     </div>
                 </div>
+                <div class="nav-backdrop"></div>
             </nav>
         </header>
 
@@ -144,74 +162,23 @@
                         class="isax icon-arrow-right-3 text-gray lg:text-lg xl:text-xl mt-2"
                     ></i>
                     <a
-                        href="/contact-us.html"
+                        href="/linktips.html"
                         class="text-black lg:text-lg xl:text-xl font-bold"
                     >
-                        Contact Us
+                        Linktips
                     </a>
                 </div>
 
-                <div class="flex flex-col gap-4 mt-4">
-                    <h1
-                        class="text-black text-2xl lg:text-4xl lg:leading-[3.4rem] lg:text-[2.5rem] 2xl:leading-[3.5rem] max-w-[45ch]"
-                    >
-                        Contact Us
-                    </h1>
-                    <p
-                        class="text-[#565565] text-base leading-6 lg:text-lg lg:leading-8 2xl:text-xl 2xl:leading-9 max-w-[80ch]"
-                    >
-                        Clocks.world is an initiative by Troef Media. When you
-                        have questions or suggestions you can contact us using
-                        the contact form below
-                    </p>
-                </div>
-
-                <form class="grid gap-7 mt-10">
-                    <div class="grid lg:grid-cols-2 gap-7">
-                        <div class="grid gap-3">
-                            <label class="contact__label" for="email"
-                                >Email
-                            </label>
-                            <input
-                                type="email"
-                                class="contact__input"
-                                placeholder="Email"
-                                id="email"
-                                required
-                            />
-                        </div>
-                        <div class="grid gap-3">
-                            <label class="contact__label" for="subject"
-                                >Subject</label
-                            >
-                            <input
-                                type="text"
-                                class="contact__input"
-                                placeholder="Subject"
-                                id="subject"
-                                required
-                            />
-                        </div>
-                    </div>
-
-                    <div class="grid gap-3">
-                        <label class="contact__label" for="message"
-                            >Your Message</label
-                        >
-                        <textarea
-                            class="contact__input"
-                            placeholder="Email"
-                            id="message"
-                            rows="10"
-                            required
-                        ></textarea>
-                    </div>
-                    <div class="mt-6">
-                        <button type="submit" class="btn-primary">
-                            Send Message
-                        </button>
-                    </div>
-                </form>
+                <h1
+                    class="text-black text-2xl lg:text-4xl lg:leading-[3.4rem] lg:text-[2.5rem] 2xl:leading-[3.5rem] max-w-[45ch] my-4"
+                >
+                    Linktips
+                </h1>
+                <img
+                    src="/public/images/linktips.png"
+                    alt=""
+                    class="w-full object-center"
+                />
             </section>
             <div class="grid gap-8">
                 <img src="/public/images/bubble-io-ad.png" alt="" />

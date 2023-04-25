@@ -14,32 +14,41 @@
     <body bg="#F8F8F8">
         <header>
             <div
-                class="container flex justify-between items-center flex-wrap py-4"
+                class="container flex justify-center lg:justify-between items-center flex-wrap py-6 relative"
             >
                 <a href="/"
                     ><img
-                        class="max-w-md"
+                        class="max-w-[8rem] sm:max-w-[10rem] lg:max-w-[14rem] xl:max-w-[20rem]"
                         src="/public/svg/logo.svg"
                         alt="Clocks World"
                 /></a>
                 <img
-                    class="max-w-[30rem]"
+                    src="/public/svg/nav-bg.svg"
+                    alt=""
+                    class="absolute top-[-150px] left-[-5%] sm:top-[-200px] sm:left-[-20%] md:top-[-200px] md:left-[-20%] w-[100%] lg:top-[-300px] lg:left-[-10%] xl:top-[-500px] xl:left-[-10%]"
+                />
+                <img
+                    class="lg:max-w-[25rem] xl:max-w-[30rem] hidden lg:block"
                     src="/public/images/grammerly-ad.png"
                     alt="grammerly-ad"
                 />
             </div>
-            <nav class="bg-[#FFC807] w-full py-4">
+            <nav class="bg-[#FFC807] w-full py-4 navbar">
                 <div
                     class="container flex justify-between items-center flex-wrap gap-4"
                 >
-                    <ul class="flex gap-4 text-[#392C0A]">
+                    <img
+                        src="/public/icons/menu.svg"
+                        alt="menu"
+                        class="block lg:hidden menu-btn"
+                    />
+
+                    <ul class="flex gap-4 text-[#392C0A] nav-items">
                         <li>
                             <a class="nav-link" href="/">Home</a>
                         </li>
                         <li>
-                            <a class="nav-link active" href="/city.html"
-                                >City</a
-                            >
+                            <a class="nav-link" href="/city.html">City</a>
                         </li>
                         <li>
                             <a class="nav-link" href="/articles.html"
@@ -118,8 +127,14 @@
                         </li>
                     </ul>
 
+                    <img
+                        src="/public/icons/search-normal.svg"
+                        alt="search"
+                        class="block lg:hidden"
+                    />
+
                     <div
-                        class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full max-w-lg flex gap-4"
+                        class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full max-w-xs lg:max-w-sm 2xl:max-w-lg gap-4 hidden lg:flex"
                     >
                         <img
                             src="/public/icons/search-normal.svg"
@@ -133,95 +148,384 @@
                         />
                     </div>
                 </div>
+                <div class="nav-backdrop"></div>
             </nav>
         </header>
 
         <main class="grid xl:grid-cols-[auto,20rem] py-10 container gap-8">
             <section class="flex flex-col gap-4 py-8 px-4">
-                <div class="flex items-center gap-4">
-                    <a href="/" class="text-gray lg:text-lg xl:text-xl"
-                        >All Pages</a
-                    >
-                    <i
-                        class="isax icon-arrow-right-3 text-gray lg:text-lg xl:text-xl mt-2"
-                    ></i>
-                    <a
-                        href="/contact-us.html"
-                        class="text-black lg:text-lg xl:text-xl font-bold"
-                    >
-                        Contact Us
-                    </a>
-                </div>
-
-                <div class="flex flex-col gap-4 mt-4">
+                <div class="flex justify-between items-center gap-4 mt-4">
                     <h1
-                        class="text-black text-2xl lg:text-4xl lg:leading-[3.4rem] lg:text-[2.5rem] 2xl:leading-[3.5rem] max-w-[45ch]"
+                        class="text-black text-xl sm:text-2xl lg:text-4xl lg:leading-[3.4rem] lg:text-[2.5rem] 2xl:leading-[3.5rem] max-w-[45ch]"
                     >
-                        Contact Us
+                        Current City Time
                     </h1>
-                    <p
-                        class="text-[#565565] text-base leading-6 lg:text-lg lg:leading-8 2xl:text-xl 2xl:leading-9 max-w-[80ch]"
+                    <button
+                        class="btn bg-[#588500] flex justify-center items-center gap-2 py-2 xl:py-3"
                     >
-                        Clocks.world is an initiative by Troef Media. When you
-                        have questions or suggestions you can contact us using
-                        the contact form below
-                    </p>
+                        <img src="/public/icons/add.svg" alt="" />
+                        <span
+                            class="text-white font-medium text-xs sm:text-sm xl:text-base capitalize"
+                            >Add City</span
+                        >
+                    </button>
                 </div>
 
-                <form class="grid gap-7 mt-10">
-                    <div class="grid lg:grid-cols-2 gap-7">
-                        <div class="grid gap-3">
-                            <label class="contact__label" for="email"
-                                >Email
-                            </label>
-                            <input
-                                type="email"
-                                class="contact__input"
-                                placeholder="Email"
-                                id="email"
-                                required
-                            />
+                <div
+                    id="clock-container"
+                    class="card flex flex-wrap gap-4 justify-center sm:justify-start"
+                >
+                    <div
+                        class="card flex flex-col items-center gap-2 max-w-[12rem]"
+                    >
+                        <h5 class="font-bold text-base">Sydney</h5>
+                        <div country="sydney"></div>
+                        <div class="grid place-items-center gap-1">
+                            <div class="digital-clock">
+                                <span
+                                    class="text-[#588500] font-bold text-xl digital-clock__hour"
+                                    >05</span
+                                ><span class="text-[#588500] font-bold text-xl"
+                                    >:</span
+                                ><span
+                                    class="text-[#588500] font-bold text-xl digital-clock__minute"
+                                    >23</span
+                                >
+                                <span
+                                    class="text-[#588500] font-bold text-xl digital-clock__meridiam"
+                                    >PM</span
+                                >
+                            </div>
+                            <p class="text-xs text-[#55534F]">05 March,2023</p>
                         </div>
-                        <div class="grid gap-3">
-                            <label class="contact__label" for="subject"
-                                >Subject</label
+                    </div>
+                    <div
+                        class="card flex flex-col items-center gap-2 max-w-[12rem]"
+                    >
+                        <h5 class="font-bold text-base">Sydney</h5>
+                        <div country="sydney2"></div>
+                        <div class="grid place-items-center gap-1">
+                            <div class="digital-clock">
+                                <span
+                                    class="text-[#588500] font-bold text-xl digital-clock__hour"
+                                    >05</span
+                                ><span class="text-[#588500] font-bold text-xl"
+                                    >:</span
+                                ><span
+                                    class="text-[#588500] font-bold text-xl digital-clock__minute"
+                                    >23</span
+                                >
+                                <span
+                                    class="text-[#588500] font-bold text-xl digital-clock__meridiam"
+                                    >PM</span
+                                >
+                            </div>
+                            <p class="text-xs text-[#55534F]">05 March,2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid gap-6 lg:grid-cols-2 mt-8">
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <div class="bg-[#FFE3DF] p-4 flex items-center gap-4">
+                            <img src="/public/svg/house.svg" alt="" />
+                            <h5 class="font-bold">
+                                Important cities in Australia
+                            </h5>
+                        </div>
+                        <ul>
+                            <li
+                                class="flex items-center justify-between p-4 border-b-1 border-b-[#E9E7E3] last:border-b-0"
                             >
-                            <input
-                                type="text"
-                                class="contact__input"
-                                placeholder="Subject"
-                                id="subject"
-                                required
-                            />
+                                <span class="text-sm text-[#55534F]"
+                                    >Chittagong</span
+                                >
+                                <span class="text-sm text-[#55534F]"
+                                    >12:38 PM</span
+                                >
+                            </li>
+                            <li
+                                class="flex items-center justify-between p-4 border-b-1 border-b-[#E9E7E3] last:border-b-0"
+                            >
+                                <span class="text-sm text-[#55534F]"
+                                    >Chittagong</span
+                                >
+                                <span class="text-sm text-[#55534F]"
+                                    >12:38 PM</span
+                                >
+                            </li>
+                            <li
+                                class="flex items-center justify-between p-4 border-b-1 border-b-[#E9E7E3] last:border-b-0"
+                            >
+                                <span class="text-sm text-[#55534F]"
+                                    >Chittagong</span
+                                >
+                                <span class="text-sm text-[#55534F]"
+                                    >12:38 PM</span
+                                >
+                            </li>
+                            <li
+                                class="flex items-center justify-between p-4 border-b-1 border-b-[#E9E7E3] last:border-b-0"
+                            >
+                                <span class="text-sm text-[#55534F]"
+                                    >Chittagong</span
+                                >
+                                <span class="text-sm text-[#55534F]"
+                                    >12:38 PM</span
+                                >
+                            </li>
+                            <li
+                                class="flex items-center justify-between p-4 border-b-1 border-b-[#E9E7E3] last:border-b-0"
+                            >
+                                <span class="text-sm text-[#55534F]"
+                                    >Chittagong</span
+                                >
+                                <span class="text-sm text-[#55534F]"
+                                    >12:38 PM</span
+                                >
+                            </li>
+                            <li
+                                class="flex items-center justify-between p-4 border-b-1 border-b-[#E9E7E3] last:border-b-0"
+                            >
+                                <span class="text-sm text-[#55534F]"
+                                    >Chittagong</span
+                                >
+                                <span class="text-sm text-[#55534F]"
+                                    >12:38 PM</span
+                                >
+                            </li>
+                            <li
+                                class="flex items-center justify-between p-4 border-b-1 border-b-[#E9E7E3] last:border-b-0"
+                            >
+                                <span class="text-sm text-[#55534F]"
+                                    >Chittagong</span
+                                >
+                                <span class="text-sm text-[#55534F]"
+                                    >12:38 PM</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="w-full h-full min-h-[16em] max-h-[25rem] lg:max-h-none rounded-lg overflow-hidden"
+                    >
+                        <img
+                            class="w-full h-full object-cover"
+                            src="/public/svg/map.svg"
+                            alt=""
+                        />
+                    </div>
+                </div>
+
+                <div
+                    class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6"
+                >
+                    <div
+                        class="card shadow-md bg-white grid place-items-center gap-2 py-8 rounded-xl"
+                    >
+                        <img src="/public/svg/city/1.svg" alt="" />
+                        <h4 class="text-xl text-black text-center max-w-[20ch]">
+                            Time Zone
+                        </h4>
+                        <p
+                            class="text-sm text-[#55534F] text-center max-w-[20ch]"
+                        >
+                            CET ( Central Bangladesh Time) UTC/GMT + 1 hour
+                        </p>
+                    </div>
+                    <div
+                        class="card shadow-md bg-white grid place-items-center gap-2 py-8 rounded-xl"
+                    >
+                        <img src="/public/svg/city/2.svg" alt="" />
+                        <h4 class="text-xl text-black text-center max-w-[20ch]">
+                            DST starts
+                        </h4>
+                        <p
+                            class="text-sm text-[#55534F] text-center max-w-[20ch]"
+                        >
+                            26 Mar 2023 Forward 1 hour
+                        </p>
+                    </div>
+                    <div
+                        class="card shadow-md bg-white grid place-items-center gap-2 py-8 rounded-xl"
+                    >
+                        <img src="/public/svg/city/3.svg" alt="" />
+                        <h4 class="text-xl text-black text-center max-w-[20ch]">
+                            DST ends
+                        </h4>
+                        <p
+                            class="text-sm text-[#55534F] text-center max-w-[20ch]"
+                        >
+                            29 Oct 2023 Back 1 hour
+                        </p>
+                    </div>
+                    <div
+                        class="card shadow-md bg-white grid place-items-center gap-2 py-8 rounded-xl"
+                    >
+                        <img src="/public/svg/city/4.svg" alt="" />
+                        <h4 class="text-xl text-black text-center max-w-[20ch]">
+                            Difference
+                        </h4>
+                        <p
+                            class="text-sm text-[#55534F] text-center max-w-[20ch]"
+                        >
+                            5 hours behind Dhaka
+                        </p>
+                    </div>
+                    <div
+                        class="card shadow-md bg-white grid place-items-center gap-2 py-8 rounded-xl"
+                    >
+                        <img src="/public/svg/city/5.svg" alt="" />
+                        <h4 class="text-xl text-black text-center max-w-[20ch]">
+                            Sunrise
+                        </h4>
+                        <p
+                            class="text-sm text-[#55534F] text-center max-w-[20ch]"
+                        >
+                            06:52 112 Southeast
+                        </p>
+                    </div>
+                    <div
+                        class="card shadow-md bg-white grid place-items-center gap-2 py-8 rounded-xl"
+                    >
+                        <img src="/public/svg/city/6.svg" alt="" />
+                        <h4 class="text-xl text-black text-center max-w-[20ch]">
+                            Sunset
+                        </h4>
+                        <p
+                            class="text-sm text-[#55534F] text-center max-w-[20ch]"
+                        >
+                            16:56 248 West
+                        </p>
+                    </div>
+                    <div
+                        class="card shadow-md bg-white grid place-items-center gap-2 py-8 rounded-xl"
+                    >
+                        <img src="/public/svg/city/7.svg" alt="" />
+                        <h4 class="text-xl text-black text-center max-w-[20ch]">
+                            Day length
+                        </h4>
+                        <p
+                            class="text-sm text-[#55534F] text-center max-w-[20ch]"
+                        >
+                            10 hours, 4 minutes +2m 13s longer
+                        </p>
+                    </div>
+                    <div
+                        class="card shadow-md bg-white grid place-items-center gap-2 py-8 rounded-xl"
+                    >
+                        <img src="/public/svg/city/8.svg" alt="" />
+                        <h4 class="text-xl text-black text-center max-w-[20ch]">
+                            Moon 82.3%
+                        </h4>
+                        <p
+                            class="text-sm text-[#55534F] text-center max-w-[20ch]"
+                        >
+                            Set - 04.01 Rise - 12.50
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid gap-8 lg:grid-cols-2 mt-10">
+                    <div class="grid gap-6">
+                        <div
+                            class="bg-white shadow-lg rounded-lg overflow-hidden"
+                        >
+                            <div
+                                class="bg-[#E4E3FF] p-4 flex items-center gap-4"
+                            >
+                                <img src="/public/svg/clock-sm.svg" alt="" />
+                                <h5 class="font-bold">
+                                    Important cities in Australia
+                                </h5>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-sm lg:text-base text-[#55534F]">
+                                    Bangladesh is not using Daylight Saving
+                                    Time.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white shadow-lg rounded-lg overflow-hidden"
+                        >
+                            <div
+                                class="bg-[#FFF2C3] p-4 flex items-center gap-4"
+                            >
+                                <img src="/public/svg/house.svg" alt="" />
+                                <h5 class="font-bold">Asia / Sydney</h5>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-sm lg:text-base text-[#55534F]">
+                                    UTC+6 (6 hours ahead of UTC)
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white shadow-lg rounded-lg overflow-hidden"
+                        >
+                            <div
+                                class="bg-[#DFF4D7] p-4 flex items-center gap-4"
+                            >
+                                <img src="/public/svg/sun.svg" alt="" />
+                                <h5 class="font-bold">
+                                    Important cities in Australia
+                                </h5>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-sm lg:text-base text-[#55534F]">
+                                    Bangladesh is not using Daylight Saving
+                                    Time.
+                                </p>
+                            </div>
                         </div>
                     </div>
+                    <div class="article-container grid-rows-[16rem,auto]">
+                        <div class="">
+                            <img
+                                src="https://images.unsplash.com/photo-1593501876007-034449c7fd63?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                                alt=""
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
 
-                    <div class="grid gap-3">
-                        <label class="contact__label" for="message"
-                            >Your Message</label
-                        >
-                        <textarea
-                            class="contact__input"
-                            placeholder="Email"
-                            id="message"
-                            rows="10"
-                            required
-                        ></textarea>
+                        <div class="grid gap-4 p-6">
+                            <h2 class="text-lg 2xl:text-2xl">
+                                Local Time In Bangladesh
+                            </h2>
+                            <p class="text-base 2xl:text-lg text-gray">
+                                The time in Bangladesh is 6 hours ahead of UTC.
+                                The timezone in Bangladesh is Bangladesh
+                                Standard Time (BST). Bangladesh is Bangladesh
+                                Standard Time (BST). The timezone in Bangladesh
+                                is Bangladesh Standard Time
+                            </p>
+                        </div>
                     </div>
-                    <div class="mt-6">
-                        <button type="submit" class="btn-primary">
-                            Send Message
-                        </button>
-                    </div>
-                </form>
+                </div>
             </section>
             <div class="grid gap-8">
                 <img src="/public/images/bubble-io-ad.png" alt="" />
+                <img src="/public/images/bubble-io-ad.png" alt="" />
+                <img src="/public/images/bubble-io-ad.png" alt="" />
             </div>
         </main>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js"></script>
+        <script
+            language="javascript"
+            type="text/javascript"
+            src="https://code.jquery.com/jquery-latest.min.js"
+        ></script>
+
+        <script
+            language="javascript"
+            type="text/javascript"
+            src="/dist/js/jquery.thooClock.js"
+        ></script>
 
         <script src="https://cdn.jsdelivr.net/npm/iconsax-font-icon@1.1.0/fantasticonrc.min.js"></script>
 
         <script type="module" src="/dist/js/main.js"></script>
+        <script type="module" src="/dist/js/city.js"></script>
+        <script type="module" src="/dist/js/digital-clock.js"></script>
     </body>
 </html>
