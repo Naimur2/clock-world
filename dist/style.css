@@ -540,7 +540,7 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.nav-backdrop{
+.backdrop{
   pointer-events: none;
   position: fixed;
   top: 0px;
@@ -554,7 +554,7 @@ video {
 }
 
 @media (min-width: 1024px){
-  .nav-backdrop{
+  .backdrop{
     display: none !important;
   }
 }
@@ -562,9 +562,6 @@ video {
 .navbar.open .nav-backdrop{
   pointer-events: auto;
   opacity: 0.5;
-}
-
-.navbar {
 }
 
 .home-clock-container{

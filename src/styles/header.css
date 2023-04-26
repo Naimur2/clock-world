@@ -23,13 +23,10 @@
         @apply translate-x-0;
     }
 
-    .nav-backdrop {
+    .backdrop {
         @apply fixed top-0 left-0 bottom-0 right-0 bg-black opacity-0 z-40 pointer-events-none lg:!hidden;
     }
     .navbar.open .nav-backdrop {
         @apply opacity-50 pointer-events-auto;
-    }
-
-    .navbar {
     }
 }
