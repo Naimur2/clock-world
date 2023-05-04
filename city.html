@@ -127,25 +127,25 @@
                         </li>
                     </ul>
 
-                    <img
-                        src="/public/icons/search-normal.svg"
-                        alt="search"
-                        class="block lg:hidden"
-                    />
+                    <button class="search-btn">
+                        <img
+                            src="/public/icons/search-normal.svg"
+                            alt="search "
+                            class="block lg:hidden"
+                        />
+                    </button>
 
                     <div
-                        class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full max-w-xs lg:max-w-sm 2xl:max-w-lg gap-4 hidden lg:flex"
+                        class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full max-w-xs lg:max-w-sm 2xl:max-w-lg gap-4 hidden lg:flex search-bar"
                     >
                         <img
                             src="/public/icons/search-normal.svg"
                             alt="search"
                             class=""
                         />
-                        <input
-                            type="text"
-                            class="w-full p-0 placeholder:text-[#55534F] focus:outline-none"
-                            placeholder="Search for a city"
-                        />
+                        <p class="text-[#55534F]">
+                            Search for a city, country, or time zone
+                        </p>
                     </div>
                 </div>
                 <div class="backdrop nav-backdrop"></div>
@@ -503,12 +503,71 @@
                     </div>
                 </div>
             </section>
-            <div class="grid gap-8">
-                <img src="/public/images/bubble-io-ad.png" alt="" />
-                <img src="/public/images/bubble-io-ad.png" alt="" />
-                <img src="/public/images/bubble-io-ad.png" alt="" />
+            <div class="add-banner-sidebar">
+                <img
+                    class="add-image-bubble"
+                    src="/public/images/bubble-io-ad.png"
+                    alt=""
+                />
+                <img
+                    class="add-image-bubble"
+                    src="/public/images/bubble-io-ad.png"
+                    alt=""
+                />
+                <img
+                    class="add-image-bubble"
+                    src="/public/images/bubble-io-ad.png"
+                    alt=""
+                />
             </div>
         </main>
+
+        <div class="search-modal px-4">
+            <div
+                class="search-modal__body w-full max-w-[40rem] mx-auto relative"
+            >
+                <div
+                    class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full gap-4 flex"
+                >
+                    <img
+                        src="/public/icons/search-normal.svg"
+                        alt="search"
+                        class=""
+                    />
+                    <input
+                        type="text"
+                        class="w-full p-0 placeholder:text-[#55534F] focus:outline-none"
+                        placeholder="Search for a city"
+                    />
+                </div>
+                <div class="card mt-2">
+                    <h5 class="font-bold text-sm lg:text-base">
+                        Search Results
+                    </h5>
+                    <div class="grid gap-4 mt-6">
+                        <div class="flex justify-between items-center">
+                            <div class="">
+                                <h4
+                                    class="font-medium text-sm sm:text-base xl:text-lg"
+                                >
+                                    Washington DC
+                                </h4>
+                                <p class="text-xs md:text-sm">
+                                    District of Columbia - USA
+                                </p>
+                            </div>
+                            <img
+                                src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg"
+                                alt=""
+                                class="w-10 h-10 object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-backdrop"></div>
+        </div>
+
         <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js"></script>
         <script
             language="javascript"

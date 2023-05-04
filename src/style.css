@@ -143,4 +143,39 @@
     body {
         @apply relative z-0;
     }
+
+    .search-modal {
+        @apply fixed inset-0  z-[-100] flex flex-col justify-center pointer-events-none z-[100010];
+    }
+
+    .search-modal__body {
+        @apply transition-all duration-300 ease-in-out opacity-0 translate-y-[-50%];
+    }
+
+    .search-modal.open {
+        @apply opacity-100 pointer-events-auto;
+    }
+
+    .search-modal.open .search-modal__body {
+        @apply opacity-100  translate-y-0;
+    }
+
+    .modal-backdrop {
+        @apply bg-black/50 inset-0 absolute z-[-1] opacity-0 transition-all duration-300 ease-in-out pointer-events-none;
+    }
+
+    .search-modal.open .modal-backdrop {
+        @apply opacity-100 pointer-events-auto;
+    }
+
+    .add-banner-sidebar {
+        @apply hidden xl:grid xl:gap-8;
+    }
+
+    .add-image-bubble {
+        @apply w-full max-w-[30rem] mx-auto;
+    }
+    .add-image-bubble.mobile {
+        @apply block md:hidden;
+    }
 }

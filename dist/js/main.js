@@ -95,7 +95,6 @@ document.addEventListener("click", (e) => {
     });
 });
 
-
 const navbar = document.querySelector(".navbar");
 const menuBtn = document.querySelector(".menu-btn");
 const navBackdrop = document.querySelector(".nav-backdrop");
@@ -116,8 +115,6 @@ navBackdrop.addEventListener("click", (e) => {
     navbar.classList.remove("open");
 });
 
-
-
 // dynamicallly add active link to nav linkk depending on the routes
 
 navLinks.forEach((link) => {
@@ -125,3 +122,27 @@ navLinks.forEach((link) => {
         link.classList.add("active");
     }
 });
+
+const searchModal = document.querySelector(".search-modal");
+const modalBackdrop = document.querySelector(".modal-backdrop");
+
+document.querySelector(".search-btn").addEventListener("click", (e) => {
+    searchModal.classList.add("open");
+});
+document.querySelector(".search-bar").addEventListener("click", (e) => {
+    searchModal.classList.add("open");
+});
+
+
+searchModal
+    .querySelector(".search-modal__body")
+    .addEventListener("click", (e) => {
+        e.stopPropagation();
+    });
+
+
+modalBackdrop.addEventListener("click", (e) => {
+    searchModal.classList.remove("open");
+});
+
+
