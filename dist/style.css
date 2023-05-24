@@ -1538,10 +1538,10 @@ body{
   z-index: 100010;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .search-modal__body{
+  margin-top: 5rem;
   --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   opacity: 0;
@@ -1607,6 +1607,14 @@ body{
   .add-image-bubble.mobile{
     display: none;
   }
+}
+
+#search-timezone-container{
+  display: none;
+}
+
+#search-timezone-container.open{
+  display: block;
 }
 
 *, ::before, ::after{
@@ -1962,8 +1970,20 @@ body{
   left: 0px;
 }
 
+.bottom-full{
+  bottom: 100%;
+}
+
+.left-0{
+  left: 0px;
+}
+
 .left-\[-5\%\]{
   left: -5%;
+}
+
+.right-0{
+  right: 0px;
 }
 
 .top-\[-150px\]{
@@ -2157,10 +2177,6 @@ body{
   display: none;
 }
 
-.h-10{
-  height: 2.5rem;
-}
-
 .h-14{
   height: 3.5rem;
 }
@@ -2189,6 +2205,10 @@ body{
   max-height: 16rem;
 }
 
+.max-h-\[20rem\]{
+  max-height: 20rem;
+}
+
 .max-h-\[25rem\]{
   max-height: 25rem;
 }
@@ -2207,10 +2227,6 @@ body{
 
 .\!w-full{
   width: 100% !important;
-}
-
-.w-10{
-  width: 2.5rem;
 }
 
 .w-14{
@@ -2239,10 +2255,6 @@ body{
 
 .max-w-\[11rem\]{
   max-width: 11rem;
-}
-
-.max-w-\[12rem\]{
-  max-width: 12rem;
 }
 
 .max-w-\[20ch\]{
@@ -2327,10 +2339,6 @@ body{
 
 .transform-none{
   transform: none;
-}
-
-.cursor-default{
-  cursor: default;
 }
 
 .cursor-pointer{
@@ -3490,6 +3498,11 @@ body{
   padding: 2rem;
 }
 
+.px-0{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -4212,6 +4225,10 @@ body{
   border-bottom-width: 0px;
 }
 
+.hover\:bg-\[\#ccc\]\/50:hover{
+  background-color: rgb(204 204 204 / 0.5);
+}
+
 .hover\:font-bold:hover{
   font-weight: 700;
 }
@@ -4252,12 +4269,24 @@ body{
     max-width: 10rem;
   }
 
+  .sm\:max-w-\[12rem\]{
+    max-width: 12rem;
+  }
+
   .sm\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .sm\:place-items-start{
+    place-items: start;
+  }
+
   .sm\:justify-start{
     justify-content: flex-start;
+  }
+
+  .sm\:text-left{
+    text-align: left;
   }
 
   .sm\:text-2xl{
@@ -4305,6 +4334,10 @@ body{
 
   .md\:max-h-\[24rem\]{
     max-height: 24rem;
+  }
+
+  .md\:max-h-\[30rem\]{
+    max-height: 30rem;
   }
 
   .md\:w-48{
@@ -4371,6 +4404,10 @@ body{
     max-height: 30rem;
   }
 
+  .lg\:max-h-\[40rem\]{
+    max-height: 40rem;
+  }
+
   .lg\:max-h-none{
     max-height: none;
   }
@@ -4417,6 +4454,11 @@ body{
 
   .lg\:gap-6{
     gap: 1.5rem;
+  }
+
+  .lg\:px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .lg\:text-2xl{
@@ -4582,6 +4624,10 @@ body{
     line-height: 2.5rem;
   }
 
+  .xl\:text-\[2\.5rem\]{
+    font-size: 2.5rem;
+  }
+
   .xl\:text-\[2rem\]{
     font-size: 2rem;
   }
@@ -4594,6 +4640,11 @@ body{
   .xl\:text-lg{
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .xl\:text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 
   .xl\:text-xl{

@@ -135,18 +135,18 @@
                         />
                     </button>
 
-                    <div
+                    <button
                         class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full max-w-xs lg:max-w-sm 2xl:max-w-lg gap-4 hidden lg:flex search-bar"
                     >
                         <img
                             src="/public/icons/search-normal.svg"
                             alt="search"
-                            class=""
+                            class="pointer-events-none"
                         />
-                        <p class="text-[#55534F]">
+                        <span class="text-[#55534F] pointer-events-none">
                             Search for a city, country, or time zone
-                        </p>
-                    </div>
+                        </span>
+                    </button>
                 </div>
                 <div class="backdrop nav-backdrop"></div>
             </nav>
@@ -154,7 +154,124 @@
 
         <main class="grid xl:grid-cols-[auto,20rem] py-10 container gap-8">
             <section class="flex flex-col gap-4 py-8 px-4">
-                <div class="flex justify-between items-center gap-4 mt-4">
+                <div
+                    class="flex justify-between items-center gap-4 mt-4 flex-wrap"
+                >
+                    <h1
+                        class="text-black text-xl sm:text-2xl lg:text-4xl lg:leading-[3.4rem] lg:text-[2.5rem] 2xl:leading-[3.5rem] max-w-[45ch]"
+                    >
+                        Current City Time
+                    </h1>
+                </div>
+
+                <div class="grid gap-6 lg:grid-cols-2 mt-8">
+                    <div class="card">
+                        <div
+                            class="grid gap-8 md:grid-cols-[auto,1fr] py-8 border-b-1 border-b-[#E9E7E3] place-items-center sm:place-items-start"
+                        >
+                            <div class="">
+                                <div id="current-clock"></div>
+                            </div>
+                            <div class="grid gap-4">
+                                <h3
+                                    class="text-black text-lg xl:text-xl font-bold text-center sm:text-left"
+                                >
+                                    Dhaka
+                                </h3>
+                                <div class="digital-clock">
+                                    <span
+                                        class="text-[#588500] font-bold text-3xl xl:text-[2.5rem] digital-clock__hour"
+                                        >05</span
+                                    ><span
+                                        class="text-[#588500] font-bold text-3xl xl:text-[2.5rem]"
+                                        >:</span
+                                    ><span
+                                        class="text-[#588500] font-bold text-3xl xl:text-[2.5rem] digital-clock__minute"
+                                        >23</span
+                                    >
+                                    <span
+                                        class="text-[#588500] font-bold text-3xl xl:text-[2.5rem]"
+                                        >:</span
+                                    >
+                                    <span
+                                        class="text-[#588500] font-bold text-3xl xl:text-[2.5rem] digital-clock__second"
+                                        >00</span
+                                    >
+                                </div>
+                                <p
+                                    class="text-xs text-[#55534F] font-medium xl:text-sm text-center sm:text-left"
+                                >
+                                    05 March,2023
+                                </p>
+                            </div>
+                        </div>
+                        <div class="py-4 mt-4 grid gap-6">
+                            <div class="grid grid-cols-2 gap-4">
+                                <h4
+                                    class="text-black font-bold text-sm xl:text-base"
+                                >
+                                    Current time:
+                                </h4>
+                                <p class="text-[#55534F] text-sm xl:text-base">
+                                    12:38 PM
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <h4
+                                    class="text-black font-bold text-sm xl:text-base"
+                                >
+                                    Time zone:
+                                </h4>
+                                <p class="text-[#55534F] text-sm xl:text-base">
+                                    Bangladesh Standard Time (BST)
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <h4
+                                    class="text-black font-bold text-sm xl:text-base"
+                                >
+                                    IANA time zone:
+                                </h4>
+                                <p class="text-[#55534F] text-sm xl:text-base">
+                                    Asia / Dhaka
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <h4
+                                    class="text-black font-bold text-sm xl:text-base"
+                                >
+                                    Your time difference:
+                                </h4>
+                                <p class="text-[#55534F] text-sm xl:text-base">
+                                    6 hours ahead of UTC
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <h4
+                                    class="text-black font-bold text-sm xl:text-base"
+                                >
+                                    UTC time difference:
+                                </h4>
+                                <p class="text-[#55534F] text-sm xl:text-base">
+                                    UTC+6 (6 hours ahead of UTC)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="w-full h-full min-h-[16em] max-h-[25rem] lg:max-h-none rounded-lg overflow-hidden"
+                    >
+                        <img
+                            class="w-full h-full object-cover"
+                            src="/public/svg/bd-map.svg"
+                            alt=""
+                        />
+                    </div>
+                </div>
+
+                <div
+                    class="flex justify-between items-center gap-4 mt-8 flex-wrap"
+                >
                     <h1
                         class="text-black text-xl sm:text-2xl lg:text-4xl lg:leading-[3.4rem] lg:text-[2.5rem] 2xl:leading-[3.5rem] max-w-[45ch]"
                     >
@@ -162,6 +279,7 @@
                     </h1>
                     <button
                         class="btn bg-[#588500] flex justify-center items-center gap-2 py-2 xl:py-3"
+                        id="add-city-btn"
                     >
                         <img src="/public/icons/add.svg" alt="" />
                         <span
@@ -176,7 +294,7 @@
                     class="card flex flex-wrap gap-4 justify-center sm:justify-start"
                 >
                     <div
-                        class="card flex flex-col items-center gap-2 max-w-[12rem]"
+                        class="card flex flex-col items-center gap-2 w-full sm:max-w-[12rem]"
                     >
                         <h5 class="font-bold text-base">Sydney</h5>
                         <div country="sydney"></div>
@@ -200,7 +318,7 @@
                         </div>
                     </div>
                     <div
-                        class="card flex flex-col items-center gap-2 max-w-[12rem]"
+                        class="card flex flex-col items-center gap-2 w-full sm:max-w-[12rem]"
                     >
                         <h5 class="font-bold text-base">Sydney</h5>
                         <div country="sydney2"></div>
@@ -224,6 +342,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="grid gap-6 lg:grid-cols-2 mt-8">
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
                         <div class="bg-[#FFE3DF] p-4 flex items-center gap-4">
@@ -536,34 +655,11 @@
                     />
                     <input
                         type="text"
-                        class="w-full p-0 placeholder:text-[#55534F] focus:outline-none"
+                        class="w-full p-0 placeholder:text-[#55534F] focus:outline-none search-input"
                         placeholder="Search for a city"
                     />
                 </div>
-                <div class="card mt-2">
-                    <h5 class="font-bold text-sm lg:text-base">
-                        Search Results
-                    </h5>
-                    <div class="grid gap-4 mt-6">
-                        <div class="flex justify-between items-center">
-                            <div class="">
-                                <h4
-                                    class="font-medium text-sm sm:text-base xl:text-lg"
-                                >
-                                    Washington DC
-                                </h4>
-                                <p class="text-xs md:text-sm">
-                                    District of Columbia - USA
-                                </p>
-                            </div>
-                            <img
-                                src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg"
-                                alt=""
-                                class="w-10 h-10 object-contain"
-                            />
-                        </div>
-                    </div>
-                </div>
+                <div id="search-results"></div>
             </div>
             <div class="modal-backdrop"></div>
         </div>
@@ -583,8 +679,23 @@
 
         <script src="https://cdn.jsdelivr.net/npm/iconsax-font-icon@1.1.0/fantasticonrc.min.js"></script>
 
+        <script type="module" src="/dist/js/digital-clock.js"></script>
         <script type="module" src="/dist/js/main.js"></script>
         <script type="module" src="/dist/js/city.js"></script>
-        <script type="module" src="/dist/js/digital-clock.js"></script>
+        <script>
+            const searchModal = document.querySelector(".search-modal");
+            const onSearchResultClick = (element) => {
+                searchModal.classList.remove("open");
+                // navigate to the city page
+                const geonameId = element.getAttribute("data-geonameId");
+                const name = element.getAttribute("data-name");
+                const location = element.getAttribute("data-location");
+                const timeZoneId = element.getAttribute("data-timeZoneId");
+                const gmtOffset = element.getAttribute("data-gmtOffset");
+                const dstOffset = element.getAttribute("data-dstOffset");
+
+                window.location.href = `/city.html?geonameId=${geonameId}&name=${name}&location=${location}&timeZoneId=${timeZoneId}&gmtOffset=${gmtOffset}&dstOffset=${dstOffset}`;
+            };
+        </script>
     </body>
 </html>

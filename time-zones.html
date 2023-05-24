@@ -135,18 +135,18 @@
                         />
                     </button>
 
-                    <div
+                    <button
                         class="bg-[#F8F8F8] py-3 px-4 rounded-lg w-full max-w-xs lg:max-w-sm 2xl:max-w-lg gap-4 hidden lg:flex search-bar"
                     >
                         <img
                             src="/public/icons/search-normal.svg"
                             alt="search"
-                            class=""
+                            class="pointer-events-none"
                         />
-                        <p class="text-[#55534F]">
+                        <span class="text-[#55534F] pointer-events-none">
                             Search for a city, country, or time zone
-                        </p>
-                    </div>
+                        </span>
+                    </button>
                 </div>
                 <div class="backdrop nav-backdrop"></div>
             </nav>
@@ -163,22 +163,26 @@
                     <ul
                         class="overflow-auto whitespace-nowrap border-b-1 border-b-[#D0CFCB] scrollbar-hide horizontal-scroll"
                     >
-                        <li class="timezone-tab cursor-default active">
+                        <li data-tag="africa" class="timezone-tab active">
                             Africa
                         </li>
-                        <li class="timezone-tab cursor-default">Asia</li>
-                        <li class="timezone-tab cursor-default">Australia</li>
-                        <li class="timezone-tab cursor-default">Europe</li>
-                        <li class="timezone-tab cursor-default">
+                        <li data-tag="asia" class="timezone-tab">Asia</li>
+                        <li data-tag="australia" class="timezone-tab">
+                            Australia
+                        </li>
+                        <li data-tag="europe" class="timezone-tab">Europe</li>
+                        <li data-tag="north-america" class="timezone-tab">
                             North America
                         </li>
-                        <li class="timezone-tab cursor-default">
+                        <li data-tag="south-america" class="timezone-tab">
                             South America
                         </li>
-                        <li class="timezone-tab cursor-default">Antarctica</li>
+                        <li data-tag="antarctica" class="timezone-tab">
+                            Antarctica
+                        </li>
                     </ul>
 
-                    <ul class="grid gap-5 mt-10">
+                    <ul class="grid gap-5 mt-10 timezone-items-container">
                         <li>
                             <a
                                 class="timezone-item"
@@ -259,34 +263,11 @@
                     />
                     <input
                         type="text"
-                        class="w-full p-0 placeholder:text-[#55534F] focus:outline-none"
+                        class="w-full p-0 placeholder:text-[#55534F] focus:outline-none search-input"
                         placeholder="Search for a city"
                     />
                 </div>
-                <div class="card mt-2">
-                    <h5 class="font-bold text-sm lg:text-base">
-                        Search Results
-                    </h5>
-                    <div class="grid gap-4 mt-6">
-                        <div class="flex justify-between items-center">
-                            <div class="">
-                                <h4
-                                    class="font-medium text-sm sm:text-base xl:text-lg"
-                                >
-                                    Washington DC
-                                </h4>
-                                <p class="text-xs md:text-sm">
-                                    District of Columbia - USA
-                                </p>
-                            </div>
-                            <img
-                                src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg"
-                                alt=""
-                                class="w-10 h-10 object-contain"
-                            />
-                        </div>
-                    </div>
-                </div>
+                <div id="search-results"></div>
             </div>
             <div class="modal-backdrop"></div>
         </div>
@@ -294,5 +275,21 @@
         <script src="https://cdn.jsdelivr.net/npm/iconsax-font-icon@1.1.0/fantasticonrc.min.js"></script>
 
         <script type="module" src="/dist/js/main.js"></script>
+        <script type="module" src="/dist/js/time-zone.js"></script>
+        <script>
+            const searchModal = document.querySelector(".search-modal");
+            const onSearchResultClick = (element) => {
+                searchModal.classList.remove("open");
+                // navigate to the city page
+                const geonameId = element.getAttribute("data-geonameId");
+                const name = element.getAttribute("data-name");
+                const location = element.getAttribute("data-location");
+                const timeZoneId = element.getAttribute("data-timeZoneId");
+                const gmtOffset = element.getAttribute("data-gmtOffset");
+                const dstOffset = element.getAttribute("data-dstOffset");
+
+                window.location.href = `/city.html?geonameId=${geonameId}&name=${name}&location=${location}&timeZoneId=${timeZoneId}&gmtOffset=${gmtOffset}&dstOffset=${dstOffset}`;
+            };
+        </script>
     </body>
 </html>

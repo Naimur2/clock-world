@@ -145,11 +145,11 @@
     }
 
     .search-modal {
-        @apply fixed inset-0  z-[-100] flex flex-col justify-center pointer-events-none z-[100010];
+        @apply fixed inset-0  z-[-100] flex flex-col pointer-events-none z-[100010];
     }
 
     .search-modal__body {
-        @apply transition-all duration-300 ease-in-out opacity-0 translate-y-[-50%];
+        @apply transition-all duration-300 ease-in-out opacity-0 translate-y-[-50%]  mt-20;
     }
 
     .search-modal.open {
@@ -177,5 +177,13 @@
     }
     .add-image-bubble.mobile {
         @apply block md:hidden;
+    }
+
+    #search-timezone-container {
+        @apply hidden;
+    }
+
+    #search-timezone-container.open {
+        @apply block;
     }
 }

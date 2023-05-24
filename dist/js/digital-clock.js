@@ -69,7 +69,7 @@ const clock = (hourNode, minuteNode, secondNode, meridiamNode, time) => {
     };
 };
 
- const digitalClockHandler = (targetElement, initialTime) => {
+export const digitalClockHandler = (targetElement, initialTime) => {
     const dgClockHour = targetElement.querySelector(".digital-clock__hour");
     const dgClockMinute = targetElement.querySelector(".digital-clock__minute");
     const dgClockSecond = targetElement.querySelector(".digital-clock__second");
@@ -92,6 +92,7 @@ const clock = (hourNode, minuteNode, secondNode, meridiamNode, time) => {
 };
 
 const digitalClocks = document.querySelectorAll(".digital-clock");
+
 digitalClocks.forEach((dgClock) => {
     const clockHandler = digitalClockHandler(dgClock, {
         hour: new Date().getHours(),

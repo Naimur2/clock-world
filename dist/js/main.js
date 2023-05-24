@@ -4,6 +4,9 @@ import hScrollHandler from "./horizontal-scroll.js";
 const horizontalScrollViews = document.querySelectorAll(".horizontal-scroll");
 const collapsables = document.querySelectorAll(".collapsable");
 
+const searchResultsContainer = document.getElementById("search-results");
+const searchInput = document.querySelector(".search-input");
+
 // select item with attribute number-only
 
 const numberOnly = document.querySelectorAll("[number-only]");
@@ -133,16 +136,141 @@ document.querySelector(".search-bar").addEventListener("click", (e) => {
     searchModal.classList.add("open");
 });
 
-
 searchModal
     .querySelector(".search-modal__body")
     .addEventListener("click", (e) => {
         e.stopPropagation();
     });
 
-
 modalBackdrop.addEventListener("click", (e) => {
     searchModal.classList.remove("open");
+    searchResultsContainer.innerHTML = "";
+});
+
+const renderSearchResults = (
+    results,
+    container = searchResultsContainer,
+    onClick
+) => {
+    const renderResult = results
+        ?.map((result) => {
+            return `
+                     <div class="flex justify-between items-center cursor-pointer hover:bg-[#ccc]/50 px-4 lg:px-6 py-2"
+                       
+                        ${onClick ? `onclick=${onClick}(this)` : ""}
+
+                        data-geonameId="${result?.geonameId}"
+                        data-name="${result?.name}"
+                        data-location="${result?.location}"
+                        data-timeZoneId="${result?.timeZoneId}"
+                        data-dstOffset="${result?.dstOffset}"
+                        data-gmtOffset="${result?.gmtOffset}"
+                     >
+                            <div class="">
+                                <h4
+                                    class="font-medium text-sm sm:text-base xl:text-lg"
+                                >
+                                    ${result.name}
+                                </h4>
+                                <p class="text-xs md:text-sm">
+                                    ${result.location}
+                                </p>
+                            </div>
+                            
+                        </div>
+        `;
+        })
+        .join("");
+
+    const result = `
+        <div class="card px-0 mt-2 overflow-hidden">
+        <h5 class="font-bold text-sm lg:text-base px-4 lg:px-6">
+            Search Results
+        </h5>
+        <div class="grid mt-2 overflow-y-scroll max-h-[20rem] md:max-h-[30rem] lg:max-h-[40rem]" >
+            ${renderResult || `<p class="text-sm">No results found</p>`}
+        </div>
+    </div>
+    `;
+
+    container.innerHTML = result;
+};
+
+const search = async (query = "", render, container, onClick) => {
+    const res = await fetch(
+        `https://clocks.world/api/search/?callback=jQuery341032723557231595235_1683285605880&name_startsWith=${query}&isNameRequired=true&maxRows=10&username=troef&type=json&featureCode=PPL&featureCode=PPLA&featureCode=PPLA2&featureCode=PPLA3&featureCode=PPLA4&featureCode=PPLC&featureCode=PPLF&featureCode=PPLG&featureCode=PPLL&featureCode=PPLQ&featureCode=PPLR&featureCode=PPLS&featureCode=PPLW&featureCode=PPLX&featureCode=STLMT&lang=nl&style=FULL&orderby=featureclass&_=1683285605883`
+    );
+
+    const data = await res.text();
+    const startingPoint = data.indexOf("(") + 1;
+    const endingPoint = data.lastIndexOf(")");
+
+    const results = JSON.parse(data.substring(startingPoint, endingPoint));
+    console.log(results);
+    const locations = results?.geonames?.map((location) => {
+        return {
+            name: location.name,
+            location: `${location.adminName1}, ${location.countryName}`,
+            geonameId: location.geonameId,
+            timeZoneId: location.timezone?.timeZoneId,
+            dstOffset: location.timezone?.dstOffset,
+            gmtOffset: location.timezone?.gmtOffset,
+            
+        };
+    });
+    render(locations, container, onClick);
+};
+
+const debounce = (fn, delay) => {
+    let timeoutId;
+    return (...args) => {
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+
+        timeoutId = setTimeout(() => {
+            fn(...args);
+        }, delay);
+    };
+};
+
+searchInput?.addEventListener("keyup", (e) => {
+    debounce(
+        search(e.target.value, renderSearchResults, searchResultsContainer,"onSearchResultClick"),
+        500
+    );
+});
+
+// search-timezone-input
+// search-timezone-container
+
+const searchTimezoneInput = document.getElementById("search-timezone-input");
+
+const searchTimezoneContainer = document.getElementById(
+    "search-timezone-container"
+);
+
+searchTimezoneInput?.addEventListener("keyup", (e) => {
+    searchTimezoneContainer.classList.add("open");
+    debounce(
+        search(
+            e.target.value,
+            renderSearchResults,
+            searchTimezoneContainer,
+            "onTimeZoneClick"
+        ),
+        500
+    );
 });
 
 
+
+document.addEventListener("click", (e) => {
+    const searchTimezoneContainer = document.getElementById(
+        "search-timezone-container"
+    );
+    if (!searchTimezoneContainer?.contains(e.target)) {
+        searchTimezoneContainer.classList.remove("open");
+    }
+}
+);
